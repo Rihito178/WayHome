@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "WayHome",
+			"Path": "..\\Source\\WayHome.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "WayHomeEditor",
+			"Path": "..\\Source\\WayHomeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
