@@ -1,0 +1,6 @@
+﻿CSVRowName,Code,CellType,RotPitch,RotYaw,RotRoll,ScaleX,ScaleY,ScaleZ,DefaultHeight,Tag
+T_Empty,0,0,0,0,0,1,1,1,0.0,None
+T_Wall,1,1,0,0,0,1,1,1,0.0,Main
+T_Floor,2,2,0,0,0,1,1,1,0.0,Main
+T_Spawn,3,3,0,0,0,1,1,1,0.0,PlayerStart
+T_Goal,4,4,0,0,0,1,1,1,0.0,Exit
