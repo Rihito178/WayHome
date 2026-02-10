@@ -78,6 +78,10 @@ AMyActor::AMyActor()
 
 void AMyActor::BuildFromCsv()
 {
+
+    UE_LOG(LogTemp, Warning, TEXT("[CSV] BuildFromCsv STARTED"));
+    UE_LOG(LogTemp, Warning, TEXT("[CSV] GridCells.Num=%d, TypeMap.Num=%d"), GridCells.Num(), TypeMap.Num());
+
     // 1) パス解決（相対は ProjectDir 基準）
     const FString GridAbs = FPaths::IsRelative(GridCsvPath.FilePath)
         ? FPaths::ConvertRelativePathToFull(FPaths::ProjectDir(), GridCsvPath.FilePath)
