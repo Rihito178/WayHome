@@ -449,11 +449,11 @@ struct Z_Construct_UFunction_AMyActor_BuildFromCsv_Statics
 		{ "CallInEditor", "true" },
 		{ "Category", "Build" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xe5\xae\x9f\xe8\xa1\x8c\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89\n" },
+		{ "Comment", "// \xe6\x89\x8b\xe5\x8b\x95\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89\n" },
 #endif
 		{ "ModuleRelativePath", "MyActor.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe5\xae\x9f\xe8\xa1\x8c\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89" },
+		{ "ToolTip", "\xe6\x89\x8b\xe5\x8b\x95\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89" },
 #endif
 	};
 #endif // WITH_METADATA
@@ -537,19 +537,43 @@ struct Z_Construct_UClass_AMyActor_Statics
 		{ "Category", "Grid" },
 		{ "ModuleRelativePath", "MyActor.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bBuildOnBeginPlay_MetaData[] = {
+		{ "Category", "Build" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// === \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe8\x87\xaa\xe5\x8b\x95\xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xef\xbc\x88\xe6\x96\xb9\xe5\xbc\x8f""B\xef\xbc\x89 ===\n" },
+#endif
+		{ "ModuleRelativePath", "MyActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "=== \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe8\x87\xaa\xe5\x8b\x95\xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xef\xbc\x88\xe6\x96\xb9\xe5\xbc\x8f""B\xef\xbc\x89 ===" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bServerOnlyBuild_MetaData[] = {
+		{ "Category", "Build" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe3\x81\xab BuildFromCsv \xe3\x82\x92\xe8\x87\xaa\xe5\x8b\x95\xe5\xae\x9f\xe8\xa1\x8c\n" },
+#endif
+		{ "ModuleRelativePath", "MyActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe3\x81\xab BuildFromCsv \xe3\x82\x92\xe8\x87\xaa\xe5\x8b\x95\xe5\xae\x9f\xe8\xa1\x8c" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_GridCsvPath;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_TypeMapCsvPath;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CellSizeX;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CellSizeY;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_BaseZ;
+	static void NewProp_bBuildOnBeginPlay_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bBuildOnBeginPlay;
+	static void NewProp_bServerOnlyBuild_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bServerOnlyBuild;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPostBuild, "BP_OnPostBuild" }, // 61480574
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPreBuild, "BP_OnPreBuild" }, // 931974105
 		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 3076143859
-		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 2582615746
+		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 1856280996
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -562,12 +586,24 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyActor_Stati
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeX = { "CellSizeX", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, CellSizeX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellSizeX_MetaData), NewProp_CellSizeX_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeY = { "CellSizeY", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, CellSizeY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellSizeY_MetaData), NewProp_CellSizeY_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_BaseZ = { "BaseZ", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, BaseZ), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BaseZ_MetaData), NewProp_BaseZ_MetaData) };
+void Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay_SetBit(void* Obj)
+{
+	((AMyActor*)Obj)->bBuildOnBeginPlay = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay = { "bBuildOnBeginPlay", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyActor), &Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bBuildOnBeginPlay_MetaData), NewProp_bBuildOnBeginPlay_MetaData) };
+void Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild_SetBit(void* Obj)
+{
+	((AMyActor*)Obj)->bServerOnlyBuild = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild = { "bServerOnlyBuild", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyActor), &Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bServerOnlyBuild_MetaData), NewProp_bServerOnlyBuild_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyActor_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_GridCsvPath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_TypeMapCsvPath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeX,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeY,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_BaseZ,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyActor_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyActor_Statics::DependentSingletons[])() = {
@@ -617,10 +653,10 @@ struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_
 		{ FGridCell::StaticStruct, Z_Construct_UScriptStruct_FGridCell_Statics::NewStructOps, TEXT("GridCell"), &Z_Registration_Info_UScriptStruct_GridCell, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGridCell), 3487467718U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 4202650363U) },
+		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 1290546822U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_1791318393(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_2231106619(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::EnumInfo));

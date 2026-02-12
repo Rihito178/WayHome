@@ -6,6 +6,51 @@
 #include "Engine/StaticMesh.h"
 
 // =======================
+// コンストラクタ
+// =======================
+AMyActor::AMyActor()
+{
+    PrimaryActorTick.bCanEverTick = false;
+}
+
+// =======================
+// 方式B：ゲーム開始時に自動ビルド
+// =======================
+void AMyActor::BeginPlay()
+{
+    Super::BeginPlay();
+
+    if (!bBuildOnBeginPlay)
+    {
+        UE_LOG(LogTemp, Log, TEXT("[CSV] BeginPlay: bBuildOnBeginPlay=false, skip."));
+        return;
+    }
+
+    // PIE/ネットワーク環境の多重実行を抑制（サーバ側のみ実行）
+    if (bServerOnlyBuild)
+    {
+        const ENetMode NM = GetNetMode();
+        if (NM == NM_Client)
+        {
+            UE_LOG(LogTemp, Log, TEXT("[CSV] BeginPlay: Client, skip by bServerOnlyBuild."));
+            return;
+        }
+    }
+
+    // 再入防止（同フレーム/多重 BeginPlay 対策）
+    static bool bInBuild = false;
+    if (bInBuild)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CSV] BeginPlay: Re-entry blocked."));
+        return;
+    }
+    TGuardValue<bool> Guard(bInBuild, true);
+
+    UE_LOG(LogTemp, Log, TEXT("[CSV] BeginPlay: Trigger BuildFromCsv()"));
+    BuildFromCsv();
+}
+
+// =======================
 // CSV ユーティリティ群
 // =======================
 
@@ -68,15 +113,8 @@ ECellType AMyActor::StringToCellTypeLoose(const FString& S)
 }
 
 // =======================
-// 本体
+// 本体：CSV→配置
 // =======================
-
-AMyActor::AMyActor()
-{
-    PrimaryActorTick.bCanEverTick = false;
-}
-
-
 void AMyActor::BuildFromCsv()
 {
     UE_LOG(LogTemp, Warning, TEXT("[CSV] BuildFromCsv STARTED"));
@@ -110,7 +148,7 @@ void AMyActor::BuildFromCsv()
     UE_LOG(LogTemp, Warning, TEXT("[CSV] AFTER LOAD: GridCells=%d  TypeMap=%d"),
         GridCells.Num(), TypeMap.Num());
 
-    // === BP 側の PreBuild ===
+    // === BP プリ処理 ===
     BP_OnPreBuild();
 
     // === デバッグカウンタ ===
@@ -156,6 +194,7 @@ void AMyActor::BuildFromCsv()
         const FTransform LocalXform(LocalRot, LocalLoc, LocalScl);
         const FTransform WorldXform = LocalXform * GetActorTransform();
 
+        // 実際の生成は BP 側（Switch/Add/Spawn/Attach）で行う
         BP_PlaceByType(*Info, WorldXform);
     }
 
@@ -164,11 +203,13 @@ void AMyActor::BuildFromCsv()
         TEXT("[CSV] LOOP SUMMARY: Passed=%d  SkipNoInfo=%d  SkipEmpty=%d"),
         Passed, SkipNoInfo, SkipEmpty);
 
-    // === BP 側の PostBuild ===
+    // === BP ポスト処理 ===
     BP_OnPostBuild();
 }
 
-
+// =======================
+// CSV 読み込み系
+// =======================
 bool AMyActor::LoadGridCsv(const FString& AbsPath)
 {
     FString CsvText;
@@ -271,9 +312,11 @@ bool AMyActor::LoadTypeMapCsv(const FString& AbsPath)
     return true;
 }
 
+// =======================
+// 1 行パース
+// =======================
 bool AMyActor::ParseCsvLine(const TArray<FString>& Columns, const TArray<FString>& Header, FGridCell& OutCell)
 {
-    // ヘッダ検索（Find は O(N) だが小規模CSVなので十分）
     const int32 XIdx = Header.Find(TEXT("X"));
     const int32 YIdx = Header.Find(TEXT("Y"));
     const int32 CodeIdx = Header.Find(TEXT("Code"));
