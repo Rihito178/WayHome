@@ -76,13 +76,12 @@ AMyActor::AMyActor()
     PrimaryActorTick.bCanEverTick = false;
 }
 
+
 void AMyActor::BuildFromCsv()
 {
-
     UE_LOG(LogTemp, Warning, TEXT("[CSV] BuildFromCsv STARTED"));
-    UE_LOG(LogTemp, Warning, TEXT("[CSV] GridCells.Num=%d, TypeMap.Num=%d"), GridCells.Num(), TypeMap.Num());
 
-    // 1) パス解決（相対は ProjectDir 基準）
+    // === パス解決 ===
     const FString GridAbs = FPaths::IsRelative(GridCsvPath.FilePath)
         ? FPaths::ConvertRelativePathToFull(FPaths::ProjectDir(), GridCsvPath.FilePath)
         : GridCsvPath.FilePath;
@@ -91,10 +90,11 @@ void AMyActor::BuildFromCsv()
         ? FPaths::ConvertRelativePathToFull(FPaths::ProjectDir(), TypeMapCsvPath.FilePath)
         : TypeMapCsvPath.FilePath;
 
-    // 2) 読み込み（前回結果をクリア）
+    // === 読み込み前にクリア ===
     GridCells.Reset();
     TypeMap.Reset();
 
+    // === CSV 読み込み ===
     if (!LoadGridCsv(GridAbs))
     {
         UE_LOG(LogTemp, Error, TEXT("Failed to load Grid CSV: %s"), *GridAbs);
@@ -106,38 +106,68 @@ void AMyActor::BuildFromCsv()
         return;
     }
 
-    // 3) BP プリ処理（HISM/辞書クリア・子アクター破棄などは BP 側で）
+    // === 読み込み後の件数 ===
+    UE_LOG(LogTemp, Warning, TEXT("[CSV] AFTER LOAD: GridCells=%d  TypeMap=%d"),
+        GridCells.Num(), TypeMap.Num());
+
+    // === BP 側の PreBuild ===
     BP_OnPreBuild();
 
-    // 4) 各セルをアクター基準（ローカル）→ ワールドへ変換し BP へ通知
+    // === デバッグカウンタ ===
+    int32 Passed = 0;
+    int32 SkipNoInfo = 0;
+    int32 SkipEmpty = 0;
+
+    // === メインループ ===
     for (const FGridCell& Cell : GridCells)
     {
         const FCellTypeInfo* Info = TypeMap.Find(Cell.Code);
-        if (!Info || Info->CellType == ECellType::Empty)
+
+        if (!Info)
         {
-            // 未定義 Code、または空セルは何もしない（描画スキップ）
+            UE_LOG(LogTemp, Warning,
+                TEXT("[CSV] SKIP(no TypeMap) Code=%d at (%d,%d)"),
+                Cell.Code, Cell.X, Cell.Y);
+            ++SkipNoInfo;
             continue;
         }
 
-        // ローカル座標（アクター原点基準）
-        const FVector  LocalLoc(static_cast<double>(Cell.X) * CellSizeX,
+        if (Info->CellType == ECellType::Empty)
+        {
+            UE_LOG(LogTemp, Warning,
+                TEXT("[CSV] SKIP(CellType=Empty) Code=%d at (%d,%d)"),
+                Cell.Code, Cell.X, Cell.Y);
+            ++SkipEmpty;
+            continue;
+        }
+
+        // ---- 通過セル（PlaceByType 呼び出し対象） ----
+        ++Passed;
+
+        // ローカル座標
+        const FVector  LocalLoc(
+            static_cast<double>(Cell.X) * CellSizeX,
             static_cast<double>(Cell.Y) * CellSizeY,
             BaseZ + Info->DefaultHeight);
+
         const FRotator LocalRot(Info->RotPitch, Info->RotYaw, Info->RotRoll);
         const FVector  LocalScl(Info->ScaleX, Info->ScaleY, Info->ScaleZ);
 
         const FTransform LocalXform(LocalRot, LocalLoc, LocalScl);
-
-        // アクターの TRS を反映してワールド変換を得る
         const FTransform WorldXform = LocalXform * GetActorTransform();
 
-        // 実際の生成は BP 側の Switch/Add/Spawn/Attach/辞書登録で行う方針
         BP_PlaceByType(*Info, WorldXform);
     }
 
-    // 5) BP ポスト処理（RebuildNavigation などは BP 側の方針に従う）
+    // === ループ総括 ===
+    UE_LOG(LogTemp, Warning,
+        TEXT("[CSV] LOOP SUMMARY: Passed=%d  SkipNoInfo=%d  SkipEmpty=%d"),
+        Passed, SkipNoInfo, SkipEmpty);
+
+    // === BP 側の PostBuild ===
     BP_OnPostBuild();
 }
+
 
 bool AMyActor::LoadGridCsv(const FString& AbsPath)
 {
