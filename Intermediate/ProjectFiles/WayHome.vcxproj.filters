@@ -11,6 +11,9 @@
     <None Include="..\..\Source\WayHomeEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +32,18 @@
     <Filter Include="Source\WayHome">
       <UniqueIdentifier>{94E577FB-DE24-3198-A9F1-4B3A7DDD2C21}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\WayHome\AIEnemy.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\AIEnemy.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\EnemyControl.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\EnemyControl.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\MyActor.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
