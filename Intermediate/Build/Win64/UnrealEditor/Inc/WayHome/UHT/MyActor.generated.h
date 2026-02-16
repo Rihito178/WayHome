@@ -30,6 +30,7 @@ template<> WAYHOME_API UScriptStruct* StaticStruct<struct FCellTypeInfo>();
 template<> WAYHOME_API UScriptStruct* StaticStruct<struct FGridCell>();
 
 #define FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_79_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetFloorWorldPoints); \
 	DECLARE_FUNCTION(execBuildFromCsv);
 
 

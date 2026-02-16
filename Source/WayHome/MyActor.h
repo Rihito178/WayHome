@@ -109,6 +109,10 @@ public:
     UFUNCTION(BlueprintCallable, CallInEditor, Category = "Build")
     void BuildFromCsv();
 
+	//  === ビルド結果の参照用 API ===
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "CSV/Runtime")
+    const TArray<FVector>& GetFloorWorldPoints() const { return FloorWorldPoints; }
+
 protected:
     // 方式B：BeginPlay で制御
     virtual void BeginPlay() override;
@@ -140,4 +144,11 @@ private:
     static TArray<FString> SplitCsvLine(const FString& Line); // 空列保持・Trim・BOM 除去
     static ECellType       IntToCellType(int32 V);            // 0〜4 以外は Empty
     static ECellType       StringToCellTypeLoose(const FString& S); // 文字列/数値文字列の両対応
+
+
+    UPROPERTY() // 参照のみ。レプリケート不要
+    TArray<FVector> FloorWorldPoints;
+
+
+
 };

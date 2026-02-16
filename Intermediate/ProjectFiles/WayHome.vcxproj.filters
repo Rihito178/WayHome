@@ -50,6 +50,12 @@
     <ClCompile Include="..\..\Source\WayHome\MyActor.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPoint.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPoint.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <None Include="..\..\Source\WayHome\WayHome.Build.cs">
       <Filter>Source\WayHome</Filter>
     </None>

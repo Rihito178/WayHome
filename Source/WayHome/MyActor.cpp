@@ -132,6 +132,8 @@ void AMyActor::BuildFromCsv()
     GridCells.Reset();
     TypeMap.Reset();
 
+    FloorWorldPoints.Reset();
+
     // === CSV 読み込み ===
     if (!LoadGridCsv(GridAbs))
     {
@@ -193,6 +195,13 @@ void AMyActor::BuildFromCsv()
 
         const FTransform LocalXform(LocalRot, LocalLoc, LocalScl);
         const FTransform WorldXform = LocalXform * GetActorTransform();
+
+
+        if (Info->CellType == ECellType::Floor)
+        {
+            FloorWorldPoints.Add(WorldXform.GetLocation());
+        }
+
 
         // 実際の生成は BP 側（Switch/Add/Spawn/Attach）で行う
         BP_PlaceByType(*Info, WorldXform);

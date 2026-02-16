@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeMyActor() {}
 // Begin Cross Module References
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FFilePath();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
@@ -478,12 +479,67 @@ DEFINE_FUNCTION(AMyActor::execBuildFromCsv)
 }
 // End Class AMyActor Function BuildFromCsv
 
+// Begin Class AMyActor Function GetFloorWorldPoints
+struct Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics
+{
+	struct MyActor_eventGetFloorWorldPoints_Parms
+	{
+		TArray<FVector> ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "CSV/Runtime" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//  === \xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xe7\xb5\x90\xe6\x9e\x9c\xe3\x81\xae\xe5\x8f\x82\xe7\x85\xa7\xe7\x94\xa8 API ===\n" },
+#endif
+		{ "ModuleRelativePath", "MyActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "=== \xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xe7\xb5\x90\xe6\x9e\x9c\xe3\x81\xae\xe5\x8f\x82\xe7\x85\xa7\xe7\x94\xa8 API ===" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000008000582, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventGetFloorWorldPoints_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::NewProp_ReturnValue_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyActor, nullptr, "GetFloorWorldPoints", nullptr, nullptr, Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::MyActor_eventGetFloorWorldPoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::MyActor_eventGetFloorWorldPoints_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMyActor_GetFloorWorldPoints()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyActor_GetFloorWorldPoints_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMyActor::execGetFloorWorldPoints)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(TArray<FVector>*)Z_Param__Result=P_THIS->GetFloorWorldPoints();
+	P_NATIVE_END;
+}
+// End Class AMyActor Function GetFloorWorldPoints
+
 // Begin Class AMyActor
 void AMyActor::StaticRegisterNativesAMyActor()
 {
 	UClass* Class = AMyActor::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "BuildFromCsv", &AMyActor::execBuildFromCsv },
+		{ "GetFloorWorldPoints", &AMyActor::execGetFloorWorldPoints },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -557,6 +613,15 @@ struct Z_Construct_UClass_AMyActor_Statics
 		{ "ToolTip", "\xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe3\x81\xab BuildFromCsv \xe3\x82\x92\xe8\x87\xaa\xe5\x8b\x95\xe5\xae\x9f\xe8\xa1\x8c" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FloorWorldPoints_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xe6\x96\x87\xe5\xad\x97\xe5\x88\x97/\xe6\x95\xb0\xe5\x80\xa4\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe3\x81\xae\xe4\xb8\xa1\xe5\xaf\xbe\xe5\xbf\x9c\n// \xe5\x8f\x82\xe7\x85\xa7\xe3\x81\xae\xe3\x81\xbf\xe3\x80\x82\xe3\x83\xac\xe3\x83\x97\xe3\x83\xaa\xe3\x82\xb1\xe3\x83\xbc\xe3\x83\x88\xe4\xb8\x8d\xe8\xa6\x81\n" },
+#endif
+		{ "ModuleRelativePath", "MyActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97/\xe6\x95\xb0\xe5\x80\xa4\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe3\x81\xae\xe4\xb8\xa1\xe5\xaf\xbe\xe5\xbf\x9c\n\xe5\x8f\x82\xe7\x85\xa7\xe3\x81\xae\xe3\x81\xbf\xe3\x80\x82\xe3\x83\xac\xe3\x83\x97\xe3\x83\xaa\xe3\x82\xb1\xe3\x83\xbc\xe3\x83\x88\xe4\xb8\x8d\xe8\xa6\x81" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_GridCsvPath;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_TypeMapCsvPath;
@@ -567,6 +632,8 @@ struct Z_Construct_UClass_AMyActor_Statics
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bBuildOnBeginPlay;
 	static void NewProp_bServerOnlyBuild_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bServerOnlyBuild;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_FloorWorldPoints_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_FloorWorldPoints;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -574,6 +641,7 @@ struct Z_Construct_UClass_AMyActor_Statics
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPreBuild, "BP_OnPreBuild" }, // 931974105
 		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 3076143859
 		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 1856280996
+		{ &Z_Construct_UFunction_AMyActor_GetFloorWorldPoints, "GetFloorWorldPoints" }, // 3147213794
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -596,6 +664,8 @@ void Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild_SetBit(void* 
 	((AMyActor*)Obj)->bServerOnlyBuild = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild = { "bServerOnlyBuild", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyActor), &Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bServerOnlyBuild_MetaData), NewProp_bServerOnlyBuild_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_FloorWorldPoints_Inner = { "FloorWorldPoints", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_FloorWorldPoints = { "FloorWorldPoints", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, FloorWorldPoints), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FloorWorldPoints_MetaData), NewProp_FloorWorldPoints_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyActor_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_GridCsvPath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_TypeMapCsvPath,
@@ -604,6 +674,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyActor_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_BaseZ,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_FloorWorldPoints_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_FloorWorldPoints,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyActor_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyActor_Statics::DependentSingletons[])() = {
@@ -653,10 +725,10 @@ struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_
 		{ FGridCell::StaticStruct, Z_Construct_UScriptStruct_FGridCell_Statics::NewStructOps, TEXT("GridCell"), &Z_Registration_Info_UScriptStruct_GridCell, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGridCell), 3487467718U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 1290546822U) },
+		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 3457700864U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_2231106619(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_536163190(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_MyActor_h_Statics::EnumInfo));
