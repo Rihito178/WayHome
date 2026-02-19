@@ -38,6 +38,12 @@
     <ClCompile Include="..\..\Source\WayHome\AIEnemy.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\BTService_SetSpeed.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\BTService_SetSpeed.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\EnemyControl.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
