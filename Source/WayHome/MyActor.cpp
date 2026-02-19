@@ -212,6 +212,10 @@ void AMyActor::BuildFromCsv()
         TEXT("[CSV] LOOP SUMMARY: Passed=%d  SkipNoInfo=%d  SkipEmpty=%d"),
         Passed, SkipNoInfo, SkipEmpty);
 
+
+    // ★ 追加：Floor の件数を明示
+    UE_LOG(LogTemp, Warning, TEXT("[CSV] FLOOR COUNT: %d"), FloorWorldPoints.Num());
+
     // === BP ポスト処理 ===
     BP_OnPostBuild();
 }

@@ -22,25 +22,36 @@ AEnemyControl::AEnemyControl(const FObjectInitializer& ObjectInitializer)
     Perception->OnTargetPerceptionUpdated.AddDynamic(this, &ThisClass::OnTargetPerceptionUpdated);
 }
 
+
 void AEnemyControl::OnPossess(APawn* InPawn)
 {
     Super::OnPossess(InPawn);
 
-    // BT/BB ÇÃÉçÅ[Éh
+    UE_LOG(LogTemp, Warning, TEXT("[AI] OnPossess: %s"), *GetNameSafe(InPawn));
+
     UBlackboardData* BBAsset = BlackboardAsset.IsNull() ? nullptr : BlackboardAsset.LoadSynchronous();
     UBehaviorTree* BTAsset = BehaviorTreeAsset.IsNull() ? nullptr : BehaviorTreeAsset.LoadSynchronous();
+    UE_LOG(LogTemp, Warning, TEXT("[AI] Assets: BB=%s  BT=%s"),
+        *GetNameSafe(BBAsset), *GetNameSafe(BTAsset));
 
     if (BBAsset && BTAsset)
     {
         UBlackboardComponent* BBComp = nullptr;
+        const bool bBBInit = UseBlackboard(BBAsset, BBComp);
+        UE_LOG(LogTemp, Warning, TEXT("[AI] UseBlackboard=%s  BBComp=%s"),
+            bBBInit ? TEXT("true") : TEXT("false"),
+            *GetNameSafe(BBComp));
 
-        // Blackboard èâä˙âª
-        UseBlackboard(BBAsset, BBComp);
-
-        // BehaviorTree ãNìÆ
-        RunBehaviorTree(BTAsset);
+        const bool bBTStarted = RunBehaviorTree(BTAsset);
+        UE_LOG(LogTemp, Warning, TEXT("[AI] RunBehaviorTree=%s"),
+            bBTStarted ? TEXT("true") : TEXT("false"));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("[AI] BT/BB asset missing."));
     }
 }
+
 
 void AEnemyControl::OnUnPossess()
 {

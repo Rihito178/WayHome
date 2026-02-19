@@ -40,6 +40,12 @@ bool UMyBTTask_RootPoint::ProjectToNav(UWorld* World, const FVector& In, FVector
 
 EBTNodeResult::Type UMyBTTask_RootPoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
+
+
+    UE_LOG(LogTemp, Warning, TEXT("[BTTask_RootPoint] FloorCount=%d"),
+        CsvBuilder.IsValid() ? CsvBuilder->GetFloorWorldPoints().Num() : -1);
+
+
     UWorld* World = OwnerComp.GetWorld();
     if (!World) return EBTNodeResult::Failed;
 
