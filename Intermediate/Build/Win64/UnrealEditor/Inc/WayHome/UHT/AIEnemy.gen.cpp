@@ -17,7 +17,59 @@ ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 UPackage* Z_Construct_UPackage__Script_WayHome();
 WAYHOME_API UClass* Z_Construct_UClass_AAIEnemy();
 WAYHOME_API UClass* Z_Construct_UClass_AAIEnemy_NoRegister();
+WAYHOME_API UClass* Z_Construct_UClass_ARootPoint_NoRegister();
 // End Cross Module References
+
+// Begin Class AAIEnemy Function GetRootPointActor
+struct Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics
+{
+	struct AIEnemy_eventGetRootPointActor_Parms
+	{
+		const ARootPoint* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "AI|Roaming" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** \xef\xbf\xbd^\xef\xbf\xbdX\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x82\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd Getter\xef\xbf\xbdiconst \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdS\xef\xbf\xbdj */" },
+#endif
+		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd^\xef\xbf\xbdX\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdQ\xef\xbf\xbd\xc6\x82\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd Getter\xef\xbf\xbdiconst \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdS\xef\xbf\xbdj" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000582, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AIEnemy_eventGetRootPointActor_Parms, ReturnValue), Z_Construct_UClass_ARootPoint_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAIEnemy, nullptr, "GetRootPointActor", nullptr, nullptr, Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::AIEnemy_eventGetRootPointActor_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::AIEnemy_eventGetRootPointActor_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAIEnemy_GetRootPointActor()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAIEnemy_GetRootPointActor_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAIEnemy::execGetRootPointActor)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(const ARootPoint**)Z_Param__Result=P_THIS->GetRootPointActor();
+	P_NATIVE_END;
+}
+// End Class AAIEnemy Function GetRootPointActor
 
 // Begin Class AAIEnemy Function OnPerceptionUpdated
 struct Z_Construct_UFunction_AAIEnemy_OnPerceptionUpdated_Statics
@@ -72,6 +124,7 @@ void AAIEnemy::StaticRegisterNativesAAIEnemy()
 {
 	UClass* Class = AAIEnemy::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "GetRootPointActor", &AAIEnemy::execGetRootPointActor },
 		{ "OnPerceptionUpdated", &AAIEnemy::execOnPerceptionUpdated },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -85,9 +138,15 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbdO\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe9\x8c\xbe\xef\xbf\xbd\xef\xbf\xbdOK\xef\xbf\xbdi\xef\xbf\xbdw\xef\xbf\xbd""b\xef\xbf\xbd_\xef\xbf\xbd\xcb\x91\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj\n" },
+#endif
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "AIEnemy.h" },
 		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbdO\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe9\x8c\xbe\xef\xbf\xbd\xef\xbf\xbdOK\xef\xbf\xbdi\xef\xbf\xbdw\xef\xbf\xbd""b\xef\xbf\xbd_\xef\xbf\xbd\xcb\x91\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PerceptionComp_MetaData[] = {
 		{ "Category", "AI" },
@@ -122,15 +181,27 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "AIEnemy.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RootPointActor_MetaData[] = {
+		{ "Category", "AI|Roaming" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xf1\x83\x8b\x81[\xef\xbf\xbdg\xef\xbf\xbdp RootPoint\xef\xbf\xbdi\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc5\x8a\xef\xbf\xbd\xef\xbf\xbd\xe8\x93\x96\xef\xbf\xbd\xc4\x81""B\xef\xbf\xbdX\xef\xbf\xbd|\xef\xbf\xbd[\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc9\x8b\xdf\x96T\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc5\x90\xdd\x92\xef\xbf\xbd\xc5\x82\xef\xbf\xbd\xef\xbf\xbd\xc2\x81j */" },
+#endif
+		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xf1\x83\x8b\x81[\xef\xbf\xbdg\xef\xbf\xbdp RootPoint\xef\xbf\xbdi\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc5\x8a\xef\xbf\xbd\xef\xbf\xbd\xe8\x93\x96\xef\xbf\xbd\xc4\x81""B\xef\xbf\xbdX\xef\xbf\xbd|\xef\xbf\xbd[\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc9\x8b\xdf\x96T\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc5\x90\xdd\x92\xef\xbf\xbd\xc5\x82\xef\xbf\xbd\xef\xbf\xbd\xc2\x81j" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PerceptionComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SightConfig;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentTarget;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ChaseWalkSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_EngageDistance;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RootPointActor;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AAIEnemy_GetRootPointActor, "GetRootPointActor" }, // 2660494836
 		{ &Z_Construct_UFunction_AAIEnemy_OnPerceptionUpdated, "OnPerceptionUpdated" }, // 2515006074
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -144,12 +215,14 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Stati
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_CurrentTarget = { "CurrentTarget", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, CurrentTarget), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentTarget_MetaData), NewProp_CurrentTarget_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_ChaseWalkSpeed = { "ChaseWalkSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, ChaseWalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChaseWalkSpeed_MetaData), NewProp_ChaseWalkSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_EngageDistance = { "EngageDistance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, EngageDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EngageDistance_MetaData), NewProp_EngageDistance_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_RootPointActor = { "RootPointActor", nullptr, (EPropertyFlags)0x0010000000000805, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, RootPointActor), Z_Construct_UClass_ARootPoint_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RootPointActor_MetaData), NewProp_RootPointActor_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAIEnemy_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_PerceptionComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_SightConfig,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_CurrentTarget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_ChaseWalkSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_EngageDistance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_RootPointActor,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAIEnemy_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AAIEnemy_Statics::DependentSingletons[])() = {
@@ -192,10 +265,10 @@ AAIEnemy::~AAIEnemy() {}
 struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_AIEnemy_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAIEnemy, AAIEnemy::StaticClass, TEXT("AAIEnemy"), &Z_Registration_Info_UClass_AAIEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIEnemy), 3708036809U) },
+		{ Z_Construct_UClass_AAIEnemy, AAIEnemy::StaticClass, TEXT("AAIEnemy"), &Z_Registration_Info_UClass_AAIEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIEnemy), 1253884596U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_AIEnemy_h_1181449380(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_AIEnemy_h_3475039483(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_AIEnemy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_WayHome_5_5_Source_WayHome_AIEnemy_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

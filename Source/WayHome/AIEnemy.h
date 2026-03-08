@@ -9,6 +9,9 @@
 //    実体のヘッダは .cpp でincludeします。
 class UAIPerceptionComponent;
 class UAISenseConfig_Sight;
+class ARootPoint; // ← 前方宣言でOK（ヘッダ依存を避ける）
+
+
 
 UCLASS()
 class WAYHOME_API AAIEnemy : public ACharacter
@@ -41,6 +44,17 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
     float EngageDistance = 2000.f;
+
+
+
+    /** 巡回ルート用 RootPoint（レベル上で割り当て。スポーン後に近傍検索で設定でも可） */
+    UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "AI|Roaming")
+    ARootPoint* RootPointActor = nullptr;
+
+    /** タスクから参照する Getter（const 安全） */
+    UFUNCTION(BlueprintPure, Category = "AI|Roaming")
+    const ARootPoint* GetRootPointActor() const { return RootPointActor; }
+
 
 private:
     UFUNCTION()
