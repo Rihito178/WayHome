@@ -1,0 +1,19 @@
+{
+  "targets": {
+    "WayHomeEditor": {
+      "targetType": "Editor",
+      "targetPath": "C:\\Users\\Rihit\\Desktop\\\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC\\Source\\WayHomeEditor.Target.cs",
+      "projectPath": "C:\\Users\\Rihit\\Desktop\\\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC\\WayHome.uproject",
+      "configurations": [
+        "Development"
+      ],
+      "platforms": [
+        "Win64"
+      ],
+      "architectures": [],
+      "configurationsAndPlatforms": [
+        "Development-Win64"
+      ]
+    }
+  }
+}
