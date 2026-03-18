@@ -44,6 +44,12 @@
     <ClCompile Include="..\..\Source\WayHome\BTService_SetSpeed.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\EnemyCharacter.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\EnemyCharacter.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\EnemyControl.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
@@ -62,10 +68,22 @@
     <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPoint.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\PlayerCharacter.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\PlayerCharacter.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\RootPoint.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\RootPoint.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\Textclass.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\Textclass.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
     <None Include="..\..\Source\WayHome\WayHome.Build.cs">
