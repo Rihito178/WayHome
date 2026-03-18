@@ -7,7 +7,6 @@
 
 #include "AIController.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "RootPoint.h" // ← ここで実体ヘッダを読む（関数本体で型を使う場合の安全策）
 
 AAIEnemy::AAIEnemy()
 {
