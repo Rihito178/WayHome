@@ -11,6 +11,7 @@ class WAYHOME_API AEnemyCharacter : public ACharacter
 
 public:
     AEnemyCharacter();
+    void SetPlayerKey(APawn* player);
 protected:
     virtual void BeginPlay() override;
 
