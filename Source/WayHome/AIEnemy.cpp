@@ -24,7 +24,7 @@ AAIEnemy::AAIEnemy()
     SightConfig->SightRadius = 2000.f;
     SightConfig->LoseSightRadius = 2200.f;
     SightConfig->PeripheralVisionAngleDegrees = 60.f;
-    SightConfig->SetMaxAge(3.f);
+    SightConfig->SetMaxAge(5.f); 
 
     SightConfig->DetectionByAffiliation.bDetectEnemies = true;
     SightConfig->DetectionByAffiliation.bDetectFriendlies = true;

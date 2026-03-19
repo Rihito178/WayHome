@@ -21,8 +21,9 @@ enum class ECellType : uint8
     Empty = 0,
     Wall = 1,
     Floor = 2,
-    Spawn = 3,
-    Goal = 4
+    PlayerSpawn = 3,
+    EnemySpawn = 4,
+    Goal = 5
 };
 
 /**
