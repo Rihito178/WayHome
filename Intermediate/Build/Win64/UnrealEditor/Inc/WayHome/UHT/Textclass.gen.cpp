@@ -76,14 +76,14 @@ ATextclass::~ATextclass() {}
 // End Class ATextclass
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_Statics
+struct Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_Textclass_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ATextclass, ATextclass::StaticClass, TEXT("ATextclass"), &Z_Registration_Info_UClass_ATextclass, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATextclass), 2920451530U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_952050755(TEXT("/Script/WayHome"),
-	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_Textclass_h_952050755(TEXT("/Script/WayHome"),
+	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_Textclass_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_Textclass_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

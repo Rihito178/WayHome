@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define WAYHOME_Textclass_generated_h
 
-#define FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_240160_WayHome_Source_WayHome_Textclass_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATextclass(); \
 	friend struct Z_Construct_UClass_ATextclass_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ATextclass)
 
 
-#define FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_240160_WayHome_Source_WayHome_Textclass_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ATextclass(ATextclass&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ATextclass();
 
 
-#define FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_9_PROLOG
-#define FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_12_GENERATED_BODY \
+#define FID_240160_WayHome_Source_WayHome_Textclass_h_9_PROLOG
+#define FID_240160_WayHome_Source_WayHome_Textclass_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h_12_ENHANCED_CONSTRUCTORS \
+	FID_240160_WayHome_Source_WayHome_Textclass_h_12_INCLASS_NO_PURE_DECLS \
+	FID_240160_WayHome_Source_WayHome_Textclass_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> WAYHOME_API UClass* StaticClass<class ATextclass>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_Textclass_h
+#define CURRENT_FILE_ID FID_240160_WayHome_Source_WayHome_Textclass_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

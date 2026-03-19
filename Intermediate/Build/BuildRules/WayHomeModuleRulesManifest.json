@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\Rihit\\Desktop\\UE5.5\\WayHome\\Source\\WayHome\\WayHome.Build.cs",
-		"C:\\Users\\Rihit\\Desktop\\UE5.5\\WayHome\\Source\\WayHome.Target.cs",
-		"C:\\Users\\Rihit\\Desktop\\UE5.5\\WayHome\\Source\\WayHomeEditor.Target.cs"
+		"C:\\240160\\WayHome\\Source\\WayHome\\WayHome.Build.cs",
+		"C:\\240160\\WayHome\\Source\\WayHome.Target.cs",
+		"C:\\240160\\WayHome\\Source\\WayHomeEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.4"
 }
