@@ -132,8 +132,6 @@ void AMyActor::BuildFromCsv()
     GridCells.Reset();
     TypeMap.Reset();
 
-    FloorWorldPoints.Reset();
-
     // === CSV 読み込み ===
     if (!LoadGridCsv(GridAbs))
     {
@@ -196,13 +194,6 @@ void AMyActor::BuildFromCsv()
         const FTransform LocalXform(LocalRot, LocalLoc, LocalScl);
         const FTransform WorldXform = LocalXform * GetActorTransform();
 
-
-        if (Info->CellType == ECellType::Floor)
-        {
-            FloorWorldPoints.Add(WorldXform.GetLocation());
-        }
-
-
         // 実際の生成は BP 側（Switch/Add/Spawn/Attach）で行う
         BP_PlaceByType(*Info, WorldXform);
     }
@@ -211,10 +202,6 @@ void AMyActor::BuildFromCsv()
     UE_LOG(LogTemp, Warning,
         TEXT("[CSV] LOOP SUMMARY: Passed=%d  SkipNoInfo=%d  SkipEmpty=%d"),
         Passed, SkipNoInfo, SkipEmpty);
-
-
-    // ★ 追加：Floor の件数を明示
-    UE_LOG(LogTemp, Warning, TEXT("[CSV] FLOOR COUNT: %d"), FloorWorldPoints.Num());
 
     // === BP ポスト処理 ===
     BP_OnPostBuild();
