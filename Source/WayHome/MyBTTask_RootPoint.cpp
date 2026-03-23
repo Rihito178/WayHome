@@ -53,7 +53,7 @@ EBTNodeResult::Type UMyBTTask_RootPoint::ExecuteTask(UBehaviorTreeComponent& Own
     // Index を取得し安全化
     int32 Index = BB->GetValueAsInt(PointIndexKey.SelectedKeyName);
     Index = (RP->PointNum() > 0) ? (Index % RP->PointNum()) : 0;
-
+    UE_LOG(LogTemp, Warning, TEXT("[Find] Index=%d / Num=%d"), Index, RP->PointNum());
     // ワールド座標を取得
     const FVector Raw = RP->GetRoamingPointWorld(Index);
 
