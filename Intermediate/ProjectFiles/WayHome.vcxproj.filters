@@ -56,6 +56,12 @@
     <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPoint.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPointIndex.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPointIndex.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\RootPoint.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
