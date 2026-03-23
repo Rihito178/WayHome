@@ -28,7 +28,13 @@ struct Z_Construct_UFunction_AAIEnemy_OnPerceptionUpdated_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Perception \xef\xbf\xbdX\xef\xbf\xbdV\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd Controller \xef\xbf\xbd\xd6\x92\xca\x92m\xef\xbf\xbdiSet/Clear\xef\xbf\xbdj */" },
+#endif
 		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Perception \xef\xbf\xbdX\xef\xbf\xbdV\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd Controller \xef\xbf\xbd\xd6\x92\xca\x92m\xef\xbf\xbdiSet/Clear\xef\xbf\xbdj" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UpdatedActors_MetaData[] = {
 		{ "NativeConst", "" },
@@ -85,11 +91,18 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * AAIEnemy\n * - \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""F\xef\xbf\xbd""C\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xf3\x82\xaf\x8e\xef\xbf\xbd\xef\xbf\xbd""AController \xef\xbf\xbd\xc9\x81u\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xef\xbf\xbd\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xca\x92m\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe9\x82\xbe\xef\xbf\xbd\xef\xbf\xbd\n * - \xef\xbf\xbd\xda\x93\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd^\xef\xbf\xbd[\xef\xbf\xbdQ\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbd\xdb\x8e\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xc7\x82\xcc\x83\xef\xbf\xbd\xef\xbf\xbdW\xef\xbf\xbd""b\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd C++ \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe7\x8a\xae\xef\xbf\xbdS\xef\xbf\xbd\xc9\x94r\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdiBT \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""B\xef\xbf\xbd\xef\xbf\xbd\xcc\x8ei\xef\xbf\xbd\xdf\x93\xef\xbf\xbd\xef\xbf\xbdj\n */" },
+#endif
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "AIEnemy.h" },
 		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "AAIEnemy\n- \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""F\xef\xbf\xbd""C\xef\xbf\xbdx\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xf3\x82\xaf\x8e\xef\xbf\xbd\xef\xbf\xbd""AController \xef\xbf\xbd\xc9\x81u\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\x82\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xef\xbf\xbd\xef\xbf\xbdv\xef\xbf\xbd\xef\xbf\xbd\xca\x92m\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe9\x82\xbe\xef\xbf\xbd\xef\xbf\xbd\n- \xef\xbf\xbd\xda\x93\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd^\xef\xbf\xbd[\xef\xbf\xbdQ\xef\xbf\xbd""b\xef\xbf\xbdg\xef\xbf\xbd\xdb\x8e\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xc7\x82\xcc\x83\xef\xbf\xbd\xef\xbf\xbdW\xef\xbf\xbd""b\xef\xbf\xbdN\xef\xbf\xbd\xef\xbf\xbd C++ \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xe7\x8a\xae\xef\xbf\xbdS\xef\xbf\xbd\xc9\x94r\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdiBT \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""B\xef\xbf\xbd\xef\xbf\xbd\xcc\x8ei\xef\xbf\xbd\xdf\x93\xef\xbf\xbd\xef\xbf\xbdj" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PerceptionComp_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
 		{ "Category", "AI" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdo\xef\xbf\xbdiPerception\xef\xbf\xbdj */" },
@@ -101,6 +114,7 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SightConfig_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
 		{ "Category", "AI" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdo\xef\xbf\xbd\xdd\x92\xef\xbf\xbdi\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xc7\x81j */" },
@@ -110,28 +124,24 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdo\xef\xbf\xbd\xdd\x92\xef\xbf\xbdi\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdp/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc8\x82\xc7\x81j" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentTarget_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "AIEnemy.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChaseWalkSpeed_MetaData[] = {
-		{ "Category", "AI" },
+		{ "Category", "AI|Movement" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbds\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xcc\x8a\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdl\xef\xbf\xbdi\xef\xbf\xbd""C\xef\xbf\xbd\xd3\x81""E\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xda\x92\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj */" },
+#endif
 		{ "ModuleRelativePath", "AIEnemy.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EngageDistance_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "AIEnemy.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbds\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdx\xef\xbf\xbd\xcc\x8a\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdl\xef\xbf\xbdi\xef\xbf\xbd""C\xef\xbf\xbd\xd3\x81""E\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xda\x92\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PerceptionComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SightConfig;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentTarget;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ChaseWalkSpeed;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_EngageDistance;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAIEnemy_OnPerceptionUpdated, "OnPerceptionUpdated" }, // 2515006074
+		{ &Z_Construct_UFunction_AAIEnemy_OnPerceptionUpdated, "OnPerceptionUpdated" }, // 816672573
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -139,17 +149,13 @@ struct Z_Construct_UClass_AAIEnemy_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_PerceptionComp = { "PerceptionComp", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, PerceptionComp), Z_Construct_UClass_UAIPerceptionComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerceptionComp_MetaData), NewProp_PerceptionComp_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_SightConfig = { "SightConfig", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, SightConfig), Z_Construct_UClass_UAISenseConfig_Sight_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SightConfig_MetaData), NewProp_SightConfig_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_CurrentTarget = { "CurrentTarget", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, CurrentTarget), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentTarget_MetaData), NewProp_CurrentTarget_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_ChaseWalkSpeed = { "ChaseWalkSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, ChaseWalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChaseWalkSpeed_MetaData), NewProp_ChaseWalkSpeed_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_EngageDistance = { "EngageDistance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, EngageDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EngageDistance_MetaData), NewProp_EngageDistance_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_PerceptionComp = { "PerceptionComp", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, PerceptionComp), Z_Construct_UClass_UAIPerceptionComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PerceptionComp_MetaData), NewProp_PerceptionComp_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_SightConfig = { "SightConfig", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, SightConfig), Z_Construct_UClass_UAISenseConfig_Sight_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SightConfig_MetaData), NewProp_SightConfig_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnemy_Statics::NewProp_ChaseWalkSpeed = { "ChaseWalkSpeed", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIEnemy, ChaseWalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChaseWalkSpeed_MetaData), NewProp_ChaseWalkSpeed_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAIEnemy_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_PerceptionComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_SightConfig,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_CurrentTarget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_ChaseWalkSpeed,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnemy_Statics::NewProp_EngageDistance,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAIEnemy_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AAIEnemy_Statics::DependentSingletons[])() = {
@@ -192,10 +198,10 @@ AAIEnemy::~AAIEnemy() {}
 struct Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_AIEnemy_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAIEnemy, AAIEnemy::StaticClass, TEXT("AAIEnemy"), &Z_Registration_Info_UClass_AAIEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIEnemy), 3708036809U) },
+		{ Z_Construct_UClass_AAIEnemy, AAIEnemy::StaticClass, TEXT("AAIEnemy"), &Z_Registration_Info_UClass_AAIEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIEnemy), 519789379U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_AIEnemy_h_1181449380(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_AIEnemy_h_3198512837(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_AIEnemy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_AIEnemy_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

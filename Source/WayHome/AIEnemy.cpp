@@ -1,17 +1,21 @@
-// AIEnemy.cpp
 #include "AIEnemy.h"
 
-// ★ Perception の実体は .cpp でinclude
+// Perception
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
+#include "Perception/AISense_Sight.h"
+
+// Controller（BBへ通知）
+#include "EnemyControl.h"
 
 #include "AIController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 AAIEnemy::AAIEnemy()
 {
-    PrimaryActorTick.bCanEverTick = true;
+    PrimaryActorTick.bCanEverTick = false; // ★ C++ Tick は不要（BTに統一）
 
+    // 見た目の向き・速度（任意）
     GetCharacterMovement()->bUseControllerDesiredRotation = true;
     GetCharacterMovement()->bOrientRotationToMovement = true;
     GetCharacterMovement()->MaxWalkSpeed = ChaseWalkSpeed;
@@ -24,7 +28,7 @@ AAIEnemy::AAIEnemy()
     SightConfig->SightRadius = 2000.f;
     SightConfig->LoseSightRadius = 2200.f;
     SightConfig->PeripheralVisionAngleDegrees = 60.f;
-    SightConfig->SetMaxAge(5.f); 
+    SightConfig->SetMaxAge(5.f);
 
     SightConfig->DetectionByAffiliation.bDetectEnemies = true;
     SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
@@ -38,61 +42,34 @@ void AAIEnemy::BeginPlay()
 {
     Super::BeginPlay();
 
-    if (PerceptionComp)
+    if (ensure(PerceptionComp))
     {
         PerceptionComp->OnPerceptionUpdated.AddDynamic(this, &AAIEnemy::OnPerceptionUpdated);
     }
 }
 
-void AAIEnemy::Tick(float DeltaTime)
+void AAIEnemy::OnPerceptionUpdated(const TArray<AActor*>& /*UpdatedActors*/)
 {
-    Super::Tick(DeltaTime);
+    if (!PerceptionComp) return;
 
-    if (CurrentTarget)
+    // 現在 視認中（Sight）から最短ターゲットを選ぶ
+    TArray<AActor*> Seen;
+    PerceptionComp->GetCurrentlyPerceivedActors(UAISense_Sight::StaticClass(), Seen);
+
+    AActor* BestNow = nullptr;
+    float   BestD2 = TNumericLimits<float>::Max();
+
+    for (AActor* A : Seen)
     {
-        const float Dist = FVector::Dist(CurrentTarget->GetActorLocation(), GetActorLocation());
-        if (Dist <= EngageDistance)
-        {
-            MoveToTarget();
-        }
-    }
-}
-
-void AAIEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-    Super::SetupPlayerInputComponent(PlayerInputComponent);
-}
-
-void AAIEnemy::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
-{
-    AActor* Best = nullptr;
-    float BestDist = TNumericLimits<float>::Max();
-
-    for (AActor* Actor : UpdatedActors)
-    {
-        if (!IsValid(Actor)) continue;
-        const float D = FVector::Dist(Actor->GetActorLocation(), GetActorLocation());
-        if (D < BestDist) { BestDist = D; Best = Actor; }
+        if (!IsValid(A)) continue;
+        const float D2 = FVector::DistSquared(A->GetActorLocation(), GetActorLocation());
+        if (D2 < BestD2) { BestD2 = D2; BestNow = A; }
     }
 
-    if (Best) { CurrentTarget = Best; MoveToTarget(); }
-    else { ClearTarget(); }
-}
-
-void AAIEnemy::MoveToTarget()
-{
-    if (AAIController* AI = Cast<AAIController>(GetController()))
+    // Controller へ通知（BB: Player_Info の Set/Clear）
+    if (AEnemyControl* C = Cast<AEnemyControl>(GetController()))
     {
-        GetCharacterMovement()->MaxWalkSpeed = ChaseWalkSpeed;
-        AI->MoveToActor(CurrentTarget, /*AcceptanceRadius=*/100.f, /*bStopOnOverlap=*/true);
-    }
-}
-
-void AAIEnemy::ClearTarget()
-{
-    CurrentTarget = nullptr;
-    if (AAIController* AI = Cast<AAIController>(GetController()))
-    {
-        AI->StopMovement();
+        if (APawn* P = Cast<APawn>(BestNow)) { C->SetTargetActor(P); }
+        else { C->ClearTargetActor(); }
     }
 }

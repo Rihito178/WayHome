@@ -1,4 +1,3 @@
-// EnemyControl.cpp
 #include "EnemyControl.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
@@ -15,27 +14,53 @@ void AEnemyControl::OnPossess(APawn* InPawn)
 {
     Super::OnPossess(InPawn);
 
+    // BB/BT を確実に初期化
     if (BehaviorTreeAsset && BehaviorTreeAsset->BlackboardAsset)
     {
         if (UseBlackboard(BehaviorTreeAsset->BlackboardAsset, BlackboardComp))
         {
-            RunBehaviorTree(BehaviorTreeAsset); // BT起動
+            RunBehaviorTree(BehaviorTreeAsset);
+            UE_LOG(LogTemp, Warning, TEXT("[AEnemyControl] OnPossess Pawn=%s  BT=%s  BB=%s"),
+                *GetNameSafe(InPawn), *GetNameSafe(BehaviorTreeAsset),
+                BehaviorTreeAsset && BehaviorTreeAsset->BlackboardAsset ? *GetNameSafe(BehaviorTreeAsset->BlackboardAsset) : TEXT("NULL"));
         }
     }
 }
 
 void AEnemyControl::OnUnPossess()
 {
+  
+
     Super::OnUnPossess();
-    if (BehaviorComp) { BehaviorComp->StopTree(EBTStopMode::Safe); }
+    if (BehaviorComp)
+    {
+        BehaviorComp->StopTree(EBTStopMode::Safe);
+
+    }
 }
 
-void AEnemyControl::SetTargetActor(AActor* Target)
+void AEnemyControl::SetTargetActor(APawn* Target)
 {
-    if (BlackboardComp) { BlackboardComp->SetValueAsObject(PlayerKeyName, Target); }
+    if (BlackboardComp)
+    {
+        BlackboardComp->SetValueAsObject(PlayerKeyName, Target); // BB: Player_Info に Set
+        StopMovement();                                          // 切替フレームの惰性停止（任意だが推奨）
+
+        UE_LOG(LogTemp, Warning, TEXT("[BB] Set %s  Key=%s  BB=%s"),
+            *GetNameSafe(Target), *PlayerKeyName.ToString(), *GetNameSafe(BlackboardComp));
+
+    }
 }
 
 void AEnemyControl::ClearTargetActor()
 {
-    if (BlackboardComp) { BlackboardComp->ClearValue(PlayerKeyName); }
+    if (BlackboardComp)
+    {
+        BlackboardComp->ClearValue(PlayerKeyName);               // BB: Player_Info を Clear
+        StopMovement();
+
+        UE_LOG(LogTemp, Warning, TEXT("[BB] Clear Key=%s  BB=%s"),
+            *PlayerKeyName.ToString(), *GetNameSafe(BlackboardComp));
+
+    }
 }
