@@ -1,22 +1,41 @@
 // EnemyControl.cpp
-
 #include "EnemyControl.h"
-#include "GameFramework/Pawn.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BehaviorTreeComponent.h"
 
 AEnemyControl::AEnemyControl(const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer)
 {
-    // 必要になればここで Perception 等を追加
+    BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComp"));
+    BehaviorComp = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorComp"));
 }
 
 void AEnemyControl::OnPossess(APawn* InPawn)
 {
     Super::OnPossess(InPawn);
-    // 必要になれば BT/BB 起動をここで
+
+    if (BehaviorTreeAsset && BehaviorTreeAsset->BlackboardAsset)
+    {
+        if (UseBlackboard(BehaviorTreeAsset->BlackboardAsset, BlackboardComp))
+        {
+            RunBehaviorTree(BehaviorTreeAsset); // BT起動
+        }
+    }
 }
 
 void AEnemyControl::OnUnPossess()
 {
     Super::OnUnPossess();
-    // 必要になれば BT 停止をここで
+    if (BehaviorComp) { BehaviorComp->StopTree(EBTStopMode::Safe); }
+}
+
+void AEnemyControl::SetTargetActor(AActor* Target)
+{
+    if (BlackboardComp) { BlackboardComp->SetValueAsObject(PlayerKeyName, Target); }
+}
+
+void AEnemyControl::ClearTargetActor()
+{
+    if (BlackboardComp) { BlackboardComp->ClearValue(PlayerKeyName); }
 }
