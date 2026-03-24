@@ -62,18 +62,6 @@
     <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPointIndex.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\MyScoreBase.cpp">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\MyScoreBase.h">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\MyScoreGamebase.cpp">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\MyScoreGamebase.h">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\RootPoint.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
