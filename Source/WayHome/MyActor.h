@@ -78,7 +78,7 @@ public:
     float CellSizeY = 400.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
-    float CellSizeZ = 20.f;
+    float CellSizeZ = 1.f;
 
     // Build options
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Build")
