@@ -23,7 +23,8 @@ enum class ECellType : uint8
     Floor = 2,
     PlayerSpawn = 3,
     EnemySpawn = 4,
-    Goal = 5
+    Goal = 5,
+    Shop = 6
 };
 
 /**
@@ -91,10 +92,10 @@ public:
 
     // === グリッド設定（アクター基準のローカル座標→アクター TRS を乗算） ===
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
-    float CellSizeX = 100.f;
+    float CellSizeX = 400.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
-    float CellSizeY = 100.f;
+    float CellSizeY = 400.f;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grid")
     float BaseZ = 0.f; // ローカル Z の基準高さ

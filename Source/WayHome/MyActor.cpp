@@ -86,6 +86,7 @@ ECellType AMyActor::IntToCellType(int32 V)
     case 3: return ECellType::PlayerSpawn;
     case 4: return ECellType::EnemySpawn;
     case 5:return ECellType::Goal;
+    case 6:return ECellType::Shop;
     default: return ECellType::Empty;
     }
 }
@@ -110,6 +111,7 @@ ECellType AMyActor::StringToCellTypeLoose(const FString& S)
     if (S.Equals(TEXT("PlayerSpawn"), ESearchCase::IgnoreCase)) return ECellType::PlayerSpawn;
     if (S.Equals(TEXT("EnemySpawn"), ESearchCase::IgnoreCase))return ECellType::EnemySpawn;
     if (S.Equals(TEXT("Goal"), ESearchCase::IgnoreCase)) return ECellType::Goal;
+    if (S.Equals(TEXT("Shop"), ESearchCase::IgnoreCase)) return ECellType::Shop;
 
     return ECellType::Empty;
 }

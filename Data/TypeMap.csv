@@ -5,3 +5,4 @@ T_Floor,2,2,0,0,0,1,1,1,0,Main
 T_PlayerSpawn,3,3,0,0,0,1,1,1,0,PlayerStart
 T_EnemySpawn,4,4,0,0,0,1,1,1,0,EnemyStart
 T_Goal,5,5,0,0,0,1,1,1,0,Exit
+T_Shop,6,6,0,0,0,1,1,1,0,Shop
