@@ -42,9 +42,6 @@ struct Z_Construct_UEnum_WayHome_ECellType_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe3\x81\xae\xe3\x82\xbb\xe3\x83\xab\xe7\xa8\xae\xe5\x88\xa5\n * - CSV \xe3\x81\xae \"CellType\" \xe5\x88\x97\xe3\x81\xa8\xe5\xaf\xbe\xe5\xbf\x9c\xef\xbc\x88\xe6\x95\xb0\xe5\x80\xa4/\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe3\x81\xa9\xe3\x81\xa1\xe3\x82\x89\xe3\x81\xa7\xe3\x82\x82\xe3\x83\x91\xe3\x83\xbc\xe3\x82\xb9\xe5\x8f\xaf\xef\xbc\x9a\xe5\xae\x9f\xe8\xa3\x85\xe3\x81\xaf .cpp \xe5\x81\xb4\xef\xbc\x89\n * - \xe5\x80\xa4\xe3\x81\xaf 0\xe3\x80\x9c""4 \xe3\x82\x92\xe5\x9b\xba\xe5\xae\x9a\xef\xbc\x88\xe5\xb0\x86\xe6\x9d\xa5 CSV \xe3\x81\xae\xe6\x95\xb0\xe5\x80\xa4\xe9\x81\x8b\xe7\x94\xa8\xe3\x81\xab\xe3\x82\x82\xe5\xae\x89\xe5\x85\xa8\xef\xbc\x89\n */" },
-#endif
 		{ "Empty.Name", "ECellType::Empty" },
 		{ "EnemySpawn.Name", "ECellType::EnemySpawn" },
 		{ "Floor.Name", "ECellType::Floor" },
@@ -52,9 +49,6 @@ struct Z_Construct_UEnum_WayHome_ECellType_Statics
 		{ "ModuleRelativePath", "MyActor.h" },
 		{ "PlayerSpawn.Name", "ECellType::PlayerSpawn" },
 		{ "Shop.Name", "ECellType::Shop" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe3\x81\xae\xe3\x82\xbb\xe3\x83\xab\xe7\xa8\xae\xe5\x88\xa5\n- CSV \xe3\x81\xae \"CellType\" \xe5\x88\x97\xe3\x81\xa8\xe5\xaf\xbe\xe5\xbf\x9c\xef\xbc\x88\xe6\x95\xb0\xe5\x80\xa4/\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe3\x81\xa9\xe3\x81\xa1\xe3\x82\x89\xe3\x81\xa7\xe3\x82\x82\xe3\x83\x91\xe3\x83\xbc\xe3\x82\xb9\xe5\x8f\xaf\xef\xbc\x9a\xe5\xae\x9f\xe8\xa3\x85\xe3\x81\xaf .cpp \xe5\x81\xb4\xef\xbc\x89\n- \xe5\x80\xa4\xe3\x81\xaf 0\xe3\x80\x9c""4 \xe3\x82\x92\xe5\x9b\xba\xe5\xae\x9a\xef\xbc\x88\xe5\xb0\x86\xe6\x9d\xa5 CSV \xe3\x81\xae\xe6\x95\xb0\xe5\x80\xa4\xe9\x81\x8b\xe7\x94\xa8\xe3\x81\xab\xe3\x82\x82\xe5\xae\x89\xe5\x85\xa8\xef\xbc\x89" },
-#endif
 		{ "Wall.Name", "ECellType::Wall" },
 	};
 #endif // WITH_METADATA
@@ -110,13 +104,7 @@ struct Z_Construct_UScriptStruct_FCellTypeInfo_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * TypeMap \xe3\x81\xae 1 \xe8\xa1\x8c\xe5\x88\x86\xef\xbc\x88\xe5\xb1\x9e\xe6\x80\xa7\xe5\xae\x9a\xe7\xbe\xa9\xef\xbc\x89\n * CSV \xe5\x88\x97\xef\xbc\x9aRowName,Code,CellType,RotPitch,RotYaw,RotRoll,ScaleX,ScaleY,ScaleZ,DefaultHeight,Tag\n * - Code: Grid \xe3\x81\xae Code\xef\xbc\x88""0\xe3\x80\x9c""4\xef\xbc\x89\xe3\x81\xab\xe4\xb8\x80\xe8\x87\xb4\n * - CellType: \xe4\xb8\x8a\xe8\xa8\x98\xe5\x88\x97\xe6\x8c\x99\xe3\x80\x82""CSV \xe3\x81\xaf \"0\" / \"Empty\" \xe3\x81\xaa\xe3\x81\xa9\xe6\x95\xb0\xe5\x80\xa4/\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe4\xb8\xa1\xe5\xaf\xbe\xe5\xbf\x9c\n */" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "TypeMap \xe3\x81\xae 1 \xe8\xa1\x8c\xe5\x88\x86\xef\xbc\x88\xe5\xb1\x9e\xe6\x80\xa7\xe5\xae\x9a\xe7\xbe\xa9\xef\xbc\x89\nCSV \xe5\x88\x97\xef\xbc\x9aRowName,Code,CellType,RotPitch,RotYaw,RotRoll,ScaleX,ScaleY,ScaleZ,DefaultHeight,Tag\n- Code: Grid \xe3\x81\xae Code\xef\xbc\x88""0\xe3\x80\x9c""4\xef\xbc\x89\xe3\x81\xab\xe4\xb8\x80\xe8\x87\xb4\n- CellType: \xe4\xb8\x8a\xe8\xa8\x98\xe5\x88\x97\xe6\x8c\x99\xe3\x80\x82""CSV \xe3\x81\xaf \"0\" / \"Empty\" \xe3\x81\xaa\xe3\x81\xa9\xe6\x95\xb0\xe5\x80\xa4/\xe6\x96\x87\xe5\xad\x97\xe5\x88\x97\xe4\xb8\xa1\xe5\xaf\xbe\xe5\xbf\x9c" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Code_MetaData[] = {
 		{ "Category", "CellTypeInfo" },
@@ -160,13 +148,7 @@ struct Z_Construct_UScriptStruct_FCellTypeInfo_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BPClass_MetaData[] = {
 		{ "Category", "CellTypeInfo" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xe5\xb0\x86\xe6\x9d\xa5\xe6\x8b\xa1\xe5\xbc\xb5\xef\xbc\x88""CSV \xe3\x81\x8b\xe3\x82\x89\xe3\x83\x91\xe3\x82\xb9\xe3\x82\x92\xe8\xaa\xad\xe3\x81\xbf\xe8\xbe\xbc\xe3\x82\x93\xe3\x81\xa7 Soft \xe5\x8f\x82\xe7\x85\xa7\xe8\xa7\xa3\xe6\xb1\xba\xe7\xad\x89\xe3\x81\x97\xe3\x81\x9f\xe3\x81\x84\xe5\xa0\xb4\xe5\x90\x88\xe3\x81\xab\xe4\xbd\xbf\xe7\x94\xa8\xef\xbc\x89\n" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe5\xb0\x86\xe6\x9d\xa5\xe6\x8b\xa1\xe5\xbc\xb5\xef\xbc\x88""CSV \xe3\x81\x8b\xe3\x82\x89\xe3\x83\x91\xe3\x82\xb9\xe3\x82\x92\xe8\xaa\xad\xe3\x81\xbf\xe8\xbe\xbc\xe3\x82\x93\xe3\x81\xa7 Soft \xe5\x8f\x82\xe7\x85\xa7\xe8\xa7\xa3\xe6\xb1\xba\xe7\xad\x89\xe3\x81\x97\xe3\x81\x9f\xe3\x81\x84\xe5\xa0\xb4\xe5\x90\x88\xe3\x81\xab\xe4\xbd\xbf\xe7\x94\xa8\xef\xbc\x89" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Mesh_MetaData[] = {
 		{ "Category", "CellTypeInfo" },
@@ -195,7 +177,7 @@ struct Z_Construct_UScriptStruct_FCellTypeInfo_Statics
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_Code = { "Code", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, Code), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Code_MetaData), NewProp_Code_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType = { "CellType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, CellType), Z_Construct_UEnum_WayHome_ECellType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellType_MetaData), NewProp_CellType_MetaData) }; // 2423559450
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType = { "CellType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, CellType), Z_Construct_UEnum_WayHome_ECellType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellType_MetaData), NewProp_CellType_MetaData) }; // 101740696
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotPitch = { "RotPitch", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotPitch), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotPitch_MetaData), NewProp_RotPitch_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotYaw = { "RotYaw", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotYaw), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotYaw_MetaData), NewProp_RotYaw_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotRoll = { "RotRoll", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotRoll), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotRoll_MetaData), NewProp_RotRoll_MetaData) };
@@ -264,13 +246,7 @@ struct Z_Construct_UScriptStruct_FGridCell_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe3\x81\xae 1 \xe3\x82\xbb\xe3\x83\xab\xef\xbc\x88\xe9\x85\x8d\xe7\xbd\xae\xe5\xaf\xbe\xe8\xb1\xa1\xef\xbc\x89\n * CSV \xe5\x88\x97\xef\xbc\x9aRowName,X,Y,Code\n */" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe3\x81\xae 1 \xe3\x82\xbb\xe3\x83\xab\xef\xbc\x88\xe9\x85\x8d\xe7\xbd\xae\xe5\xaf\xbe\xe8\xb1\xa1\xef\xbc\x89\nCSV \xe5\x88\x97\xef\xbc\x9aRowName,X,Y,Code" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_X_MetaData[] = {
 		{ "Category", "GridCell" },
@@ -280,13 +256,24 @@ struct Z_Construct_UScriptStruct_FGridCell_Statics
 		{ "Category", "GridCell" },
 		{ "ModuleRelativePath", "MyActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Code_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Z_MetaData[] = {
 		{ "Category", "GridCell" },
 		{ "ModuleRelativePath", "MyActor.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Code_MetaData[] = {
+		{ "Category", "GridCell" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xe2\x98\x85 X/Y \xe3\x81\xa8\xe5\x90\x8c\xe5\x88\x97\xe3\x81\xae Z\n" },
+#endif
+		{ "ModuleRelativePath", "MyActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe2\x98\x85 X/Y \xe3\x81\xa8\xe5\x90\x8c\xe5\x88\x97\xe3\x81\xae Z" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_X;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Y;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Z;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Code;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static void* NewStructOps()
@@ -297,10 +284,12 @@ struct Z_Construct_UScriptStruct_FGridCell_Statics
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_X = { "X", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGridCell, X), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_X_MetaData), NewProp_X_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Y = { "Y", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGridCell, Y), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Y_MetaData), NewProp_Y_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Z = { "Z", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGridCell, Z), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Z_MetaData), NewProp_Z_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Code = { "Code", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGridCell, Code), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Code_MetaData), NewProp_Code_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FGridCell_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_X,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Y,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Z,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridCell_Statics::NewProp_Code,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridCell_Statics::PropPointers) < 2048);
@@ -368,13 +357,7 @@ struct Z_Construct_UFunction_AMyActor_BP_OnPreBuild_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Build" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// BP \xe5\x81\xb4\xe3\x81\xa7\xe5\xae\x9f\xe8\xa3\x85\xe3\x81\x99\xe3\x82\x8b 3 \xe3\x81\xa4\xe3\x81\xae\xe3\x82\xa4\xe3\x83\x99\xe3\x83\xb3\xe3\x83\x88\n" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "BP \xe5\x81\xb4\xe3\x81\xa7\xe5\xae\x9f\xe8\xa3\x85\xe3\x81\x99\xe3\x82\x8b 3 \xe3\x81\xa4\xe3\x81\xae\xe3\x82\xa4\xe3\x83\x99\xe3\x83\xb3\xe3\x83\x88" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -425,7 +408,7 @@ struct Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo = { "TypeInfo", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, TypeInfo), Z_Construct_UScriptStruct_FCellTypeInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TypeInfo_MetaData), NewProp_TypeInfo_MetaData) }; // 3826023540
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo = { "TypeInfo", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, TypeInfo), Z_Construct_UScriptStruct_FCellTypeInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TypeInfo_MetaData), NewProp_TypeInfo_MetaData) }; // 3290678338
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_Transform = { "Transform", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, Transform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Transform_MetaData), NewProp_Transform_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo,
@@ -452,13 +435,7 @@ struct Z_Construct_UFunction_AMyActor_BuildFromCsv_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "CallInEditor", "true" },
 		{ "Category", "Build" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xe6\x89\x8b\xe5\x8b\x95\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89\n" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe6\x89\x8b\xe5\x8b\x95\xe3\x83\x88\xe3\x83\xaa\xe3\x82\xac\xef\xbc\x88\xe3\x82\xa8\xe3\x83\x87\xe3\x82\xa3\xe3\x82\xbf\xe3\x81\xae Details \xe3\x81\x8b\xe3\x82\x89\xe6\x8a\xbc\xe4\xb8\x8b\xe5\x8f\xaf\xef\xbc\x89" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -500,23 +477,17 @@ struct Z_Construct_UClass_AMyActor_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * API \xe3\x83\x9e\xe3\x82\xaf\xe3\x83\xad\xe3\x81\xaf\xe3\x83\x97\xe3\x83\xad\xe3\x82\xb8\xe3\x82\xa7\xe3\x82\xaf\xe3\x83\x88\xe3\x81\xae\xe3\x83\xa2\xe3\x82\xb8\xe3\x83\xa5\xe3\x83\xbc\xe3\x83\xab\xe5\x90\x8d\xe3\x81\xab\xe5\x90\x88\xe3\x82\x8f\xe3\x81\x9b\xe3\x81\xa6\xe5\xa4\x89\xe6\x9b\xb4\xe3\x81\x97\xe3\x81\xa6\xe3\x81\x8f\xe3\x81\xa0\xe3\x81\x95\xe3\x81\x84\xe3\x80\x82\n * \xe4\xbe\x8b\xef\xbc\x89WayHome \xe2\x86\x92 WAYHOME_API / MyProject \xe2\x86\x92 MYPROJECT_API\n */" },
-#endif
 		{ "IncludePath", "MyActor.h" },
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "API \xe3\x83\x9e\xe3\x82\xaf\xe3\x83\xad\xe3\x81\xaf\xe3\x83\x97\xe3\x83\xad\xe3\x82\xb8\xe3\x82\xa7\xe3\x82\xaf\xe3\x83\x88\xe3\x81\xae\xe3\x83\xa2\xe3\x82\xb8\xe3\x83\xa5\xe3\x83\xbc\xe3\x83\xab\xe5\x90\x8d\xe3\x81\xab\xe5\x90\x88\xe3\x82\x8f\xe3\x81\x9b\xe3\x81\xa6\xe5\xa4\x89\xe6\x9b\xb4\xe3\x81\x97\xe3\x81\xa6\xe3\x81\x8f\xe3\x81\xa0\xe3\x81\x95\xe3\x81\x84\xe3\x80\x82\n\xe4\xbe\x8b\xef\xbc\x89WayHome \xe2\x86\x92 WAYHOME_API / MyProject \xe2\x86\x92 MYPROJECT_API" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GridCsvPath_MetaData[] = {
 		{ "Category", "CSV" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// === \xe5\x85\xa5\xe5\x8a\x9b CSV \xe3\x83\x91\xe3\x82\xb9\xef\xbc\x88\xe7\x9b\xb8\xe5\xaf\xbe\xe3\x81\xaf ProjectDir \xe5\x9f\xba\xe6\xba\x96\xef\xbc\x89 ===\n" },
+		{ "Comment", "// CSV paths\n" },
 #endif
 		{ "ModuleRelativePath", "MyActor.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "=== \xe5\x85\xa5\xe5\x8a\x9b CSV \xe3\x83\x91\xe3\x82\xb9\xef\xbc\x88\xe7\x9b\xb8\xe5\xaf\xbe\xe3\x81\xaf ProjectDir \xe5\x9f\xba\xe6\xba\x96\xef\xbc\x89 ===" },
+		{ "ToolTip", "CSV paths" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TypeMapCsvPath_MetaData[] = {
@@ -526,47 +497,41 @@ struct Z_Construct_UClass_AMyActor_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CellSizeX_MetaData[] = {
 		{ "Category", "Grid" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// === \xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe8\xa8\xad\xe5\xae\x9a\xef\xbc\x88\xe3\x82\xa2\xe3\x82\xaf\xe3\x82\xbf\xe3\x83\xbc\xe5\x9f\xba\xe6\xba\x96\xe3\x81\xae\xe3\x83\xad\xe3\x83\xbc\xe3\x82\xab\xe3\x83\xab\xe5\xba\xa7\xe6\xa8\x99\xe2\x86\x92\xe3\x82\xa2\xe3\x82\xaf\xe3\x82\xbf\xe3\x83\xbc TRS \xe3\x82\x92\xe4\xb9\x97\xe7\xae\x97\xef\xbc\x89 ===\n" },
+		{ "Comment", "// Grid settings\n" },
 #endif
 		{ "ModuleRelativePath", "MyActor.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "=== \xe3\x82\xb0\xe3\x83\xaa\xe3\x83\x83\xe3\x83\x89\xe8\xa8\xad\xe5\xae\x9a\xef\xbc\x88\xe3\x82\xa2\xe3\x82\xaf\xe3\x82\xbf\xe3\x83\xbc\xe5\x9f\xba\xe6\xba\x96\xe3\x81\xae\xe3\x83\xad\xe3\x83\xbc\xe3\x82\xab\xe3\x83\xab\xe5\xba\xa7\xe6\xa8\x99\xe2\x86\x92\xe3\x82\xa2\xe3\x82\xaf\xe3\x82\xbf\xe3\x83\xbc TRS \xe3\x82\x92\xe4\xb9\x97\xe7\xae\x97\xef\xbc\x89 ===" },
+		{ "ToolTip", "Grid settings" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CellSizeY_MetaData[] = {
 		{ "Category", "Grid" },
 		{ "ModuleRelativePath", "MyActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BaseZ_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CellSizeZ_MetaData[] = {
 		{ "Category", "Grid" },
 		{ "ModuleRelativePath", "MyActor.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bBuildOnBeginPlay_MetaData[] = {
 		{ "Category", "Build" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// === \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe8\x87\xaa\xe5\x8b\x95\xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xef\xbc\x88\xe6\x96\xb9\xe5\xbc\x8f""B\xef\xbc\x89 ===\n" },
+		{ "Comment", "// Build options\n" },
 #endif
 		{ "ModuleRelativePath", "MyActor.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "=== \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe8\x87\xaa\xe5\x8b\x95\xe3\x83\x93\xe3\x83\xab\xe3\x83\x89\xef\xbc\x88\xe6\x96\xb9\xe5\xbc\x8f""B\xef\xbc\x89 ===" },
+		{ "ToolTip", "Build options" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bServerOnlyBuild_MetaData[] = {
 		{ "Category", "Build" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe3\x81\xab BuildFromCsv \xe3\x82\x92\xe8\x87\xaa\xe5\x8b\x95\xe5\xae\x9f\xe8\xa1\x8c\n" },
-#endif
 		{ "ModuleRelativePath", "MyActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xe8\xb5\xb7\xe5\x8b\x95\xe6\x99\x82\xe3\x81\xab BuildFromCsv \xe3\x82\x92\xe8\x87\xaa\xe5\x8b\x95\xe5\xae\x9f\xe8\xa1\x8c" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_GridCsvPath;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_TypeMapCsvPath;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CellSizeX;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CellSizeY;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_BaseZ;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_CellSizeZ;
 	static void NewProp_bBuildOnBeginPlay_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bBuildOnBeginPlay;
 	static void NewProp_bServerOnlyBuild_SetBit(void* Obj);
@@ -575,9 +540,9 @@ struct Z_Construct_UClass_AMyActor_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPostBuild, "BP_OnPostBuild" }, // 61480574
-		{ &Z_Construct_UFunction_AMyActor_BP_OnPreBuild, "BP_OnPreBuild" }, // 931974105
-		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 2685228662
-		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 1856280996
+		{ &Z_Construct_UFunction_AMyActor_BP_OnPreBuild, "BP_OnPreBuild" }, // 3816367395
+		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 307978746
+		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 2354535858
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -589,7 +554,7 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyActor_Stati
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_TypeMapCsvPath = { "TypeMapCsvPath", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, TypeMapCsvPath), Z_Construct_UScriptStruct_FFilePath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TypeMapCsvPath_MetaData), NewProp_TypeMapCsvPath_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeX = { "CellSizeX", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, CellSizeX), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellSizeX_MetaData), NewProp_CellSizeX_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeY = { "CellSizeY", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, CellSizeY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellSizeY_MetaData), NewProp_CellSizeY_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_BaseZ = { "BaseZ", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, BaseZ), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BaseZ_MetaData), NewProp_BaseZ_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeZ = { "CellSizeZ", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyActor, CellSizeZ), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellSizeZ_MetaData), NewProp_CellSizeZ_MetaData) };
 void Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay_SetBit(void* Obj)
 {
 	((AMyActor*)Obj)->bBuildOnBeginPlay = 1;
@@ -605,7 +570,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyActor_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_TypeMapCsvPath,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeX,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeY,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_BaseZ,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_CellSizeZ,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bBuildOnBeginPlay,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyActor_Statics::NewProp_bServerOnlyBuild,
 };
@@ -650,17 +615,17 @@ AMyActor::~AMyActor() {}
 struct Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ ECellType_StaticEnum, TEXT("ECellType"), &Z_Registration_Info_UEnum_ECellType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2423559450U) },
+		{ ECellType_StaticEnum, TEXT("ECellType"), &Z_Registration_Info_UEnum_ECellType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 101740696U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FCellTypeInfo::StaticStruct, Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewStructOps, TEXT("CellTypeInfo"), &Z_Registration_Info_UScriptStruct_CellTypeInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCellTypeInfo), 3826023540U) },
-		{ FGridCell::StaticStruct, Z_Construct_UScriptStruct_FGridCell_Statics::NewStructOps, TEXT("GridCell"), &Z_Registration_Info_UScriptStruct_GridCell, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGridCell), 3487467718U) },
+		{ FCellTypeInfo::StaticStruct, Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewStructOps, TEXT("CellTypeInfo"), &Z_Registration_Info_UScriptStruct_CellTypeInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCellTypeInfo), 3290678338U) },
+		{ FGridCell::StaticStruct, Z_Construct_UScriptStruct_FGridCell_Statics::NewStructOps, TEXT("GridCell"), &Z_Registration_Info_UScriptStruct_GridCell, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGridCell), 2570871803U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 3367561331U) },
+		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 252279039U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_4099854480(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_3565394108(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::EnumInfo));
