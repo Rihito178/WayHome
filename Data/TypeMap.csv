@@ -4,5 +4,11 @@ T_Wall,1,1,0,0,0,1,1,1,0,Main
 T_Floor,2,2,0,0,0,1,1,1,0,Main
 T_PlayerSpawn,3,3,0,0,0,1,1,1,0,PlayerStart
 T_EnemySpawn,4,4,0,0,0,1,1,1,0,EnemyStart
-T_Goal,5,5,0,0,0,1,1,1,0,Exit
-T_Shop,6,6,0,0,0,1,1,1,0,Shop
+T_Shop_W,5,5,0,0,0,1,1,1,0,Shop
+T_Shop_A,6,6,0,0,0,1,1,1,0,Shop
+T_Shop_S,7,7,0,0,0,1,1,1,0,Shop
+T_Shop_D,8,8,0,0,0,1,1,1,0,Shop
+T_Goal_W,9,9,0,0,0,1,1,1,0,Goal
+T_Goal_A,10,10,0,0,0,1,1,1,0,Goal
+T_Goal_S,11,11,0,0,0,1,1,1,0,Goal
+T_Goal_D,12,12,0,0,0,1,1,1,0,Goal
