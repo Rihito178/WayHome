@@ -17,8 +17,15 @@ enum class ECellType : uint8
     Floor = 2,
     PlayerSpawn = 3,
     EnemySpawn = 4,
-    Goal = 5,
-    Shop = 6
+    Shop_W = 5,
+    Shop_A= 6,
+    Shop_S= 7,
+    Shop_D= 8,
+    Goal_W= 9,
+    Goal_A= 10,
+    Goal_S= 11,
+    Goal_D= 12
+
 };
 
 USTRUCT(BlueprintType)

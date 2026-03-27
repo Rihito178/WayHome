@@ -45,10 +45,16 @@ struct Z_Construct_UEnum_WayHome_ECellType_Statics
 		{ "Empty.Name", "ECellType::Empty" },
 		{ "EnemySpawn.Name", "ECellType::EnemySpawn" },
 		{ "Floor.Name", "ECellType::Floor" },
-		{ "Goal.Name", "ECellType::Goal" },
+		{ "Goal_A.Name", "ECellType::Goal_A" },
+		{ "Goal_D.Name", "ECellType::Goal_D" },
+		{ "Goal_S.Name", "ECellType::Goal_S" },
+		{ "Goal_W.Name", "ECellType::Goal_W" },
 		{ "ModuleRelativePath", "MyActor.h" },
 		{ "PlayerSpawn.Name", "ECellType::PlayerSpawn" },
-		{ "Shop.Name", "ECellType::Shop" },
+		{ "Shop_A.Name", "ECellType::Shop_A" },
+		{ "Shop_D.Name", "ECellType::Shop_D" },
+		{ "Shop_S.Name", "ECellType::Shop_S" },
+		{ "Shop_W.Name", "ECellType::Shop_W" },
 		{ "Wall.Name", "ECellType::Wall" },
 	};
 #endif // WITH_METADATA
@@ -58,8 +64,14 @@ struct Z_Construct_UEnum_WayHome_ECellType_Statics
 		{ "ECellType::Floor", (int64)ECellType::Floor },
 		{ "ECellType::PlayerSpawn", (int64)ECellType::PlayerSpawn },
 		{ "ECellType::EnemySpawn", (int64)ECellType::EnemySpawn },
-		{ "ECellType::Goal", (int64)ECellType::Goal },
-		{ "ECellType::Shop", (int64)ECellType::Shop },
+		{ "ECellType::Shop_W", (int64)ECellType::Shop_W },
+		{ "ECellType::Shop_A", (int64)ECellType::Shop_A },
+		{ "ECellType::Shop_S", (int64)ECellType::Shop_S },
+		{ "ECellType::Shop_D", (int64)ECellType::Shop_D },
+		{ "ECellType::Goal_W", (int64)ECellType::Goal_W },
+		{ "ECellType::Goal_A", (int64)ECellType::Goal_A },
+		{ "ECellType::Goal_S", (int64)ECellType::Goal_S },
+		{ "ECellType::Goal_D", (int64)ECellType::Goal_D },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -177,7 +189,7 @@ struct Z_Construct_UScriptStruct_FCellTypeInfo_Statics
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_Code = { "Code", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, Code), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Code_MetaData), NewProp_Code_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType = { "CellType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, CellType), Z_Construct_UEnum_WayHome_ECellType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellType_MetaData), NewProp_CellType_MetaData) }; // 101740696
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_CellType = { "CellType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, CellType), Z_Construct_UEnum_WayHome_ECellType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CellType_MetaData), NewProp_CellType_MetaData) }; // 3519582410
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotPitch = { "RotPitch", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotPitch), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotPitch_MetaData), NewProp_RotPitch_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotYaw = { "RotYaw", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotYaw), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotYaw_MetaData), NewProp_RotYaw_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewProp_RotRoll = { "RotRoll", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCellTypeInfo, RotRoll), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotRoll_MetaData), NewProp_RotRoll_MetaData) };
@@ -408,7 +420,7 @@ struct Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo = { "TypeInfo", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, TypeInfo), Z_Construct_UScriptStruct_FCellTypeInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TypeInfo_MetaData), NewProp_TypeInfo_MetaData) }; // 3290678338
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo = { "TypeInfo", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, TypeInfo), Z_Construct_UScriptStruct_FCellTypeInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TypeInfo_MetaData), NewProp_TypeInfo_MetaData) }; // 4025275028
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_Transform = { "Transform", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyActor_eventBP_PlaceByType_Parms, Transform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Transform_MetaData), NewProp_Transform_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyActor_BP_PlaceByType_Statics::NewProp_TypeInfo,
@@ -541,7 +553,7 @@ struct Z_Construct_UClass_AMyActor_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPostBuild, "BP_OnPostBuild" }, // 61480574
 		{ &Z_Construct_UFunction_AMyActor_BP_OnPreBuild, "BP_OnPreBuild" }, // 3816367395
-		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 307978746
+		{ &Z_Construct_UFunction_AMyActor_BP_PlaceByType, "BP_PlaceByType" }, // 1634085364
 		{ &Z_Construct_UFunction_AMyActor_BuildFromCsv, "BuildFromCsv" }, // 2354535858
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -615,17 +627,17 @@ AMyActor::~AMyActor() {}
 struct Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ ECellType_StaticEnum, TEXT("ECellType"), &Z_Registration_Info_UEnum_ECellType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 101740696U) },
+		{ ECellType_StaticEnum, TEXT("ECellType"), &Z_Registration_Info_UEnum_ECellType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3519582410U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FCellTypeInfo::StaticStruct, Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewStructOps, TEXT("CellTypeInfo"), &Z_Registration_Info_UScriptStruct_CellTypeInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCellTypeInfo), 3290678338U) },
+		{ FCellTypeInfo::StaticStruct, Z_Construct_UScriptStruct_FCellTypeInfo_Statics::NewStructOps, TEXT("CellTypeInfo"), &Z_Registration_Info_UScriptStruct_CellTypeInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCellTypeInfo), 4025275028U) },
 		{ FGridCell::StaticStruct, Z_Construct_UScriptStruct_FGridCell_Statics::NewStructOps, TEXT("GridCell"), &Z_Registration_Info_UScriptStruct_GridCell, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGridCell), 2570871803U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 252279039U) },
+		{ Z_Construct_UClass_AMyActor, AMyActor::StaticClass, TEXT("AMyActor"), &Z_Registration_Info_UClass_AMyActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyActor), 1119020239U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_3565394108(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_1604295149(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyActor_h_Statics::EnumInfo));
