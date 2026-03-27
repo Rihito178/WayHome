@@ -44,40 +44,42 @@ ECellType AMyActor::IntToCellType(int32 V)
 {
     switch (V)
     {
-    case 0: return ECellType::Empty;
-    case 1: return ECellType::Wall;
-    case 2: return ECellType::Floor;
-    case 3: return ECellType::PlayerSpawn;
-    case 4: return ECellType::EnemySpawn;
-    case 5: return ECellType::Shop_W;
-    case 6:  return ECellType::Shop_A;
-    case 7:  return ECellType::Shop_S;
-    case 8:  return ECellType::Shop_D;
-    case 9:  return ECellType::Goal_W;
-    case 10: return ECellType::Goal_A;
-    case 11: return ECellType::Goal_S;
-    case 12: return ECellType::Goal_D;
+
+    case 0:     return ECellType::Empty;
+    case 1:     return ECellType::Wall;
+    case 2:     return ECellType::Floor;
+    case 3:     return ECellType::PlayerSpawn;
+    case 4:     return ECellType::EnemySpawn;
+    case 5:     return ECellType::Shop_W;
+    case 6:     return ECellType::Shop_A;
+    case 7:     return ECellType::Shop_S;
+    case 8:     return ECellType::Shop_D;
+    case 9:     return ECellType::Goal_W;
+    case 10:    return ECellType::Goal_A;
+    case 11:    return ECellType::Goal_S;
+    case 12:    return ECellType::Goal_D;
 
     default: return ECellType::Empty;
+
     }
 }
 
 ECellType AMyActor::StringToCellTypeLoose(const FString& S)
 {
     if (S.IsNumeric()) return IntToCellType(FCString::Atoi(*S));
-    if (S.Equals(TEXT("Empty"), ESearchCase::IgnoreCase)) return ECellType::Empty;
-    if (S.Equals(TEXT("Wall"), ESearchCase::IgnoreCase)) return ECellType::Wall;
-    if (S.Equals(TEXT("Floor"), ESearchCase::IgnoreCase)) return ECellType::Floor;
-    if (S.Equals(TEXT("PlayerSpawn"), ESearchCase::IgnoreCase)) return ECellType::PlayerSpawn;
-    if (S.Equals(TEXT("EnemySpawn"), ESearchCase::IgnoreCase)) return ECellType::EnemySpawn;
-    if (S.Equals(TEXT("Shop_W"), ESearchCase::IgnoreCase)) return ECellType::Shop_W;
-    if (S.Equals(TEXT("Shop_A"), ESearchCase::IgnoreCase)) return ECellType::Shop_A;
-    if (S.Equals(TEXT("Shop_S"), ESearchCase::IgnoreCase)) return ECellType::Shop_S;
-    if (S.Equals(TEXT("Shop_D"), ESearchCase::IgnoreCase)) return ECellType::Shop_D;
-    if (S.Equals(TEXT("Goal_W"), ESearchCase::IgnoreCase)) return ECellType::Goal_W;
-    if (S.Equals(TEXT("Goal_A"), ESearchCase::IgnoreCase)) return ECellType::Goal_A;
-    if (S.Equals(TEXT("Goal_S"), ESearchCase::IgnoreCase)) return ECellType::Goal_S;
-    if (S.Equals(TEXT("Goal_D"), ESearchCase::IgnoreCase)) return ECellType::Goal_D;
+    if (S.Equals(TEXT("Empty"),         ESearchCase::IgnoreCase)) return ECellType::Empty;
+    if (S.Equals(TEXT("Wall"),          ESearchCase::IgnoreCase)) return ECellType::Wall;
+    if (S.Equals(TEXT("Floor"),         ESearchCase::IgnoreCase)) return ECellType::Floor;
+    if (S.Equals(TEXT("PlayerSpawn"),   ESearchCase::IgnoreCase)) return ECellType::PlayerSpawn;
+    if (S.Equals(TEXT("EnemySpawn"),    ESearchCase::IgnoreCase)) return ECellType::EnemySpawn;
+    if (S.Equals(TEXT("Shop_W"),        ESearchCase::IgnoreCase)) return ECellType::Shop_W;
+    if (S.Equals(TEXT("Shop_A"),        ESearchCase::IgnoreCase)) return ECellType::Shop_A;
+    if (S.Equals(TEXT("Shop_S"),        ESearchCase::IgnoreCase)) return ECellType::Shop_S;
+    if (S.Equals(TEXT("Shop_D"),        ESearchCase::IgnoreCase)) return ECellType::Shop_D;
+    if (S.Equals(TEXT("Goal_W"),        ESearchCase::IgnoreCase)) return ECellType::Goal_W;
+    if (S.Equals(TEXT("Goal_A"),        ESearchCase::IgnoreCase)) return ECellType::Goal_A;
+    if (S.Equals(TEXT("Goal_S"),        ESearchCase::IgnoreCase)) return ECellType::Goal_S;
+    if (S.Equals(TEXT("Goal_D"),        ESearchCase::IgnoreCase)) return ECellType::Goal_D;
    
     return ECellType::Empty;
 }
