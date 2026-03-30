@@ -142,14 +142,14 @@ UMyBTTask_RootPoint::~UMyBTTask_RootPoint() {}
 // End Class UMyBTTask_RootPoint
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UMyBTTask_RootPoint, UMyBTTask_RootPoint::StaticClass, TEXT("UMyBTTask_RootPoint"), &Z_Registration_Info_UClass_UMyBTTask_RootPoint, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBTTask_RootPoint), 2286454276U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyBTTask_RootPoint_h_870536944(TEXT("/Script/WayHome"),
-	Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_240160_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_MyBTTask_RootPoint_h_870536944(TEXT("/Script/WayHome"),
+	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_MyBTTask_RootPoint_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
