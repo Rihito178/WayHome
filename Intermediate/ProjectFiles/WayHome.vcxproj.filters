@@ -38,12 +38,6 @@
     <ClCompile Include="..\..\Source\WayHome\AIEnemy.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\CSVinstance.cpp">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\WayHome\CSVinstance.h">
-      <Filter>Source\WayHome</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\EnemyControl.cpp">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
@@ -66,6 +60,12 @@
       <Filter>Source\WayHome</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\MyBTTask_RootPointIndex.h">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyCSVInstance.cpp">
+      <Filter>Source\WayHome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\WayHome\MyCSVInstance.h">
       <Filter>Source\WayHome</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\WayHome\RootPoint.cpp">
