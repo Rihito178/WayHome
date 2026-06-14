@@ -1,6 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-#include "MyCSVInstance.h"
+ï»¿#include "MyCSVInstance.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 
@@ -21,12 +19,12 @@ void UMyCSVInstance::LoadCSV()
         TArray<FString> Lines;
         FileContent.ParseIntoArrayLines(Lines);
 
-        for (int i = 1; i < Lines.Num(); i++) // ƒwƒbƒ_ƒXƒLƒbƒv
+        for (int i = 1; i < Lines.Num(); i++) // ãƒ˜ãƒƒãƒ€è¡Œã‚¹ã‚­ãƒƒãƒ—
         {
             TArray<FString> Columns;
             Lines[i].ParseIntoArray(Columns, TEXT(","), true);
 
-            if (Columns.Num() >= 3)
+            if (Columns.Num() >= 2) // âœ… 2åˆ—å¯¾å¿œ
             {
                 CSVData.Add(Columns);
             }
@@ -34,18 +32,15 @@ void UMyCSVInstance::LoadCSV()
     }
 }
 
-TArray<FString> UMyCSVInstance::GetDialogue(const FString& NPC_ID)
+TArray<FString> UMyCSVInstance::GetDialogue()
 {
     TArray<FString> Result;
 
     for (const TArray<FString>& Row : CSVData)
     {
-        if (Row.Num() >= 3)
+        if (Row.Num() >= 2)
         {
-            if (Row[0].Equals(NPC_ID))
-            {
-                Result.Add(Row[2]); // ƒZƒŠƒt—ñ
-            }
+            Result.Add(Row[1]); // âœ… Textåˆ—ã ã‘å–å¾—
         }
     }
 

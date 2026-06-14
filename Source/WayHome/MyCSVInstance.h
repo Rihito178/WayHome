@@ -1,9 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "Engine/EngineTypes.h" // ✅ FFilePath用
 #include "MyCSVInstance.generated.h"
 
 UCLASS()
@@ -15,8 +14,12 @@ public:
 
     virtual void Init() override;
 
+    // ✅ ダイアログCSVパス（BPから設定）
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CSV")
+    FFilePath DialogueCsvPath;
+
     UFUNCTION(BlueprintCallable)
-    TArray<FString> GetDialogue(const FString& NPC_ID);
+    TArray<FString> GetDialogue();
 
 private:
 
