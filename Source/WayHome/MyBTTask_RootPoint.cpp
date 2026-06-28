@@ -8,7 +8,6 @@
 UMyBTTask_RootPoint::UMyBTTask_RootPoint()
 {
     NodeName = TEXT("Find Roaming Point (Index→Location)");
-    // このタスクは Vector を書く（例：Point_Location）
     BlackboardKey.AddVectorFilter(this, GET_MEMBER_NAME_CHECKED(UMyBTTask_RootPoint, BlackboardKey));
 }
 
@@ -16,7 +15,7 @@ ARootPoint* UMyBTTask_RootPoint::FindRootPoint(UWorld* World) const
 {
     TArray<AActor*> Found;
     UGameplayStatics::GetAllActorsOfClass(World, ARootPoint::StaticClass(), Found);
-    return (Found.Num() > 0) ? Cast<ARootPoint>(Found[0]) : nullptr; // 記事形式：最初の1体
+    return (Found.Num() > 0) ? Cast<ARootPoint>(Found[0]) : nullptr;
 }
 
 bool UMyBTTask_RootPoint::ProjectToNav(UWorld* World, const FVector& In, FVector& Out, const FVector& Extent) const
@@ -50,14 +49,14 @@ EBTNodeResult::Type UMyBTTask_RootPoint::ExecuteTask(UBehaviorTreeComponent& Own
     UBlackboardComponent* BB = OwnerComp.GetBlackboardComponent();
     if (!BB) return EBTNodeResult::Failed;
 
-    // Index を取得し安全化
+    //Indexを取得し安全化
     int32 Index = BB->GetValueAsInt(PointIndexKey.SelectedKeyName);
     Index = (RP->PointNum() > 0) ? (Index % RP->PointNum()) : 0;
     UE_LOG(LogTemp, Warning, TEXT("[Find] Index=%d / Num=%d"), Index, RP->PointNum());
-    // ワールド座標を取得
+    //ワールド座標を取得
     const FVector Raw = RP->GetRoamingPointWorld(Index);
 
-    // NavMesh へ投影（安定化）
+    //NavMeshへ投影
     FVector NavLoc;
     FVector Extent = ProjectSearchExtent;
     bool bOk = ProjectToNav(World, Raw, NavLoc, Extent);
@@ -68,7 +67,6 @@ EBTNodeResult::Type UMyBTTask_RootPoint::ExecuteTask(UBehaviorTreeComponent& Own
     }
     if (!bOk) return EBTNodeResult::Failed;
 
-    // Blackboard(Vector = Point_Location) に書き込み
     BB->SetValueAsVector(BlackboardKey.SelectedKeyName, NavLoc);
     return EBTNodeResult::Succeeded;
 }

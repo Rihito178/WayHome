@@ -62,9 +62,8 @@ void AAIEnemy::OnPerceptionUpdated(const TArray<AActor*>& /*UpdatedActors*/)
     {
         if (!IsValid(A)) continue;
 
-        // ★★★★★ ここが今回のバグ修正の核心 ★★★★★
-        // Player 以外は絶対にターゲットにしない
-        if (!A->ActorHasTag(TEXT("Player")))
+
+        if (!A->ActorHasTag(TEXT("Player")))//Targetにするタグ名
         {
             continue;
         }

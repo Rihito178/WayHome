@@ -7,14 +7,14 @@ UMyBTTask_RootPointIndex::UMyBTTask_RootPointIndex(const FObjectInitializer& Obj
     : UBTTask_BlackboardBase{ ObjectInitializer }
 {
     NodeName = TEXT("Roaming Point Index");
-    // BlackboardKey（Int）は BT 側で「Point_Index」を割り当ててください
+    //BlackboardKeyはBT側でPoint_Indexを割り当て
 }
 
 ARootPoint* UMyBTTask_RootPointIndex::FindRootPoint(UWorld* World)
 {
     TArray<AActor*> Found;
     UGameplayStatics::GetAllActorsOfClass(World, ARootPoint::StaticClass(), Found);
-    return (Found.Num() > 0) ? Cast<ARootPoint>(Found[0]) : nullptr; // 記事形式：最初の1体
+    return (Found.Num() > 0) ? Cast<ARootPoint>(Found[0]) : nullptr;
 }
 
 EBTNodeResult::Type UMyBTTask_RootPointIndex::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -42,12 +42,12 @@ EBTNodeResult::Type UMyBTTask_RootPointIndex::ExecuteTask(UBehaviorTreeComponent
 
     if (bDirectional)
     {
-        // per‑instance の方向フラグを NodeMemory から取得
+        //per‑instanceの方向フラグをNodeMemoryから取得
         auto* Mem = reinterpret_cast<FMemory*>(NodeMemory);
         const int32 MinIndex = 0;
         const int32 MaxIndex = Num - 1;
 
-        // 端で反転
+        //端で反転
         if (Index >= MaxIndex && Mem->bForward)      Mem->bForward = false;
         else if (Index <= MinIndex && !Mem->bForward) Mem->bForward = true;
 
@@ -57,7 +57,6 @@ EBTNodeResult::Type UMyBTTask_RootPointIndex::ExecuteTask(UBehaviorTreeComponent
     }
     else
     {
-        // 循環：0 → 1 → … → N-1 → 0
         BB->SetValueAsInt(GetSelectedBlackboardKey(), (Index + 1) % Num);
     }
 

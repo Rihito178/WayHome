@@ -6,14 +6,14 @@ TArray<FString> UMyCSVInstance::GetDialogue(const FString& FilePath)
 {
     TArray<FString> Result;
 
-    // ✅ パスが空なら終了
+    //パスが空なら終了
     if (FilePath.IsEmpty())
     {
         UE_LOG(LogTemp, Error, TEXT("FilePath is EMPTY"));
         return Result;
     }
 
-    // ✅ 相対パスを絶対パスに変換
+    //相対パスを絶対パスに変換
     FString FixedPath = FPaths::ConvertRelativePathToFull(FilePath);
 
     UE_LOG(LogTemp, Warning, TEXT("Loading CSV: %s"), *FixedPath);
@@ -34,7 +34,7 @@ TArray<FString> UMyCSVInstance::GetDialogue(const FString& FilePath)
 
             if (Columns.Num() >= 2 && !Columns[1].IsEmpty())
             {
-                Result.Add(Columns[1]); // ✅ セリフ列
+                Result.Add(Columns[1]); //セリフ列
             }
         }
 

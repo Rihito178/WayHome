@@ -23,7 +23,7 @@ void AMyActor::BeginPlay()
     BuildFromCsv();
 }
 
-/* ================= Utility ================= */
+
 
 TArray<FString> AMyActor::SplitCsvLine(const FString& Line)
 {
@@ -84,8 +84,7 @@ ECellType AMyActor::StringToCellTypeLoose(const FString& S)
     return ECellType::Empty;
 }
 
-/* ================= Build ================= */
-
+//ビルド処理部分
 void AMyActor::BuildFromCsv()
 {
     GridCells.Reset();
@@ -122,8 +121,8 @@ void AMyActor::BuildFromCsv()
     BP_OnPostBuild();
 }
 
-/* ================= CSV Load ================= */
 
+//CSVロード処理部分
 bool AMyActor::LoadGridCsv(const FString& AbsPath)
 {
     FString Text;
@@ -168,7 +167,6 @@ bool AMyActor::LoadTypeMapCsv(const FString& AbsPath)
     return true;
 }
 
-/* ================= Parse ================= */
 
 bool AMyActor::ParseCsvLine(const TArray<FString>& Columns, const TArray<FString>& Header, FGridCell& OutCell)
 {

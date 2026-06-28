@@ -26,21 +26,21 @@ public:
 
     virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
-    // per‑instance で方向フラグを持つためのメモリ領域サイズ
+    //per‑instanceで方向フラグを持つためのメモリ領域サイズ
     virtual uint16 GetInstanceMemorySize() const override { return sizeof(FMemory); }
 
 protected:
-    /** true: 往復 / false: 常に前進（循環） */
+    //true:往復/false:常に前進
     UPROPERTY(EditAnywhere, Category = "AI")
     bool bDirectional = true;
 
 private:
-    // 個体ごとに方向を保持するための NodeMemory
+    //個体ごとに方向を保持する
     struct FMemory
     {
-        bool bForward = true; // 初期は前進
+        bool bForward = true;//初期は前進
     };
 
-    // 記事形式：RootPoint はタスク内で見つける（最初の1体）
+
     static ARootPoint* FindRootPoint(UWorld* World);
 };

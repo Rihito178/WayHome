@@ -58,7 +58,7 @@ struct FGridCell
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 X = 0;
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Y = 0;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Z = 0;   // ★ X/Y と同列の Z
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Z = 0;
     UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Code = 0;
 };
 

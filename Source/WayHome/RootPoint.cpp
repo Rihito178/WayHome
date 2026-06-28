@@ -22,7 +22,6 @@ void ARootPoint::OnConstruction(const FTransform& Transform)
     Super::OnConstruction(Transform);
 
 #if WITH_EDITORONLY_DATA
-    // ƒGƒfƒBƒ^‚ÌƒvƒŒƒrƒ…[¢ŠE‚Ì‚Ý•`‰æiPIE‚âƒQ[ƒ€‚Å‚Í•`‚©‚È‚¢j
     if (bDrawDebugInEditor && GetWorld() && !GetWorld()->IsGameWorld())
     {
         const FTransform& Xf = GetActorTransform();
@@ -37,7 +36,6 @@ void ARootPoint::OnConstruction(const FTransform& Transform)
 #endif
 }
 
-/** ---------- Žæ“¾Œn ---------- */
 
 FVector ARootPoint::GetRoamingPointLocal(int32 Index) const
 {

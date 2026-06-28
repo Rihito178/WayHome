@@ -8,11 +8,11 @@ class UBlackboardComponent;
 class UBehaviorTreeComponent;
 class UBehaviorTree;
 
-/**
- * AEnemyControl
- * - RunBehaviorTree / UseBlackboard を OnPossess で一度だけ起動
- * - Player_Info（BBキー）への書き込み/クリアのみを公開（移動命令は一切しない）
- */
+/*
+AEnemyControl
+RunBehaviorTree / UseBlackboard を OnPossess で一度だけ起動
+Player_Info（BBキー）への書き込み/クリアのみを公開（移動命令は一切しない）
+*/
 UCLASS()
 class WAYHOME_API AEnemyControl : public AAIController
 {
@@ -26,7 +26,7 @@ protected:
     virtual void OnUnPossess() override;
 
 public:
-    /** 視認しているプレイヤー（APawn）を BB の Player_Info に書き込む／クリアする */
+    /* 視認しているプレイヤーをBBのPlayer_Infoに書き込む／クリア */
     UFUNCTION(BlueprintCallable, Category = "AI")
     void SetTargetActor(APawn* Target);
 
@@ -40,11 +40,9 @@ private:
     UPROPERTY(Transient)
     UBehaviorTreeComponent* BehaviorComp = nullptr;
 
-    /** Controller（BP）の Defaults から割り当てる想定 */
     UPROPERTY(EditDefaultsOnly, Category = "AI")
     UBehaviorTree* BehaviorTreeAsset = nullptr;
 
-    /** ★ Blackboard/BT と完全一致させる（例：Player_Info） */
     UPROPERTY(EditDefaultsOnly, Category = "AI")
     FName PlayerKeyName = TEXT("Player_Info");
 };

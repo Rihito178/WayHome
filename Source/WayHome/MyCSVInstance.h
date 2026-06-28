@@ -11,7 +11,7 @@ class WAYHOME_API UMyCSVInstance : public UGameInstance
 
 public:
 
-    // ✅ CSVパスを引数で受け取る
+    //CSVパスを引数で受け取る
     UFUNCTION(BlueprintCallable)
     TArray<FString> GetDialogue(const FString& FilePath);
 };

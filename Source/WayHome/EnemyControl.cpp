@@ -14,7 +14,7 @@ void AEnemyControl::OnPossess(APawn* InPawn)
 {
     Super::OnPossess(InPawn);
 
-    // BB/BT を確実に初期化
+    // BB/BT を初期化
     if (BehaviorTreeAsset && BehaviorTreeAsset->BlackboardAsset)
     {
         if (UseBlackboard(BehaviorTreeAsset->BlackboardAsset, BlackboardComp))
@@ -44,7 +44,7 @@ void AEnemyControl::SetTargetActor(APawn* Target)
     if (BlackboardComp)
     {
         BlackboardComp->SetValueAsObject(PlayerKeyName, Target); // BB: Player_Info に Set
-        StopMovement();                                          // 切替フレームの惰性停止（任意だが推奨）
+        StopMovement();
 
         UE_LOG(LogTemp, Warning, TEXT("[BB] Set %s  Key=%s  BB=%s"),
             *GetNameSafe(Target), *PlayerKeyName.ToString(), *GetNameSafe(BlackboardComp));

@@ -25,19 +25,19 @@ public:
 protected:
     virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
-    /** Index を読むための BB キー（例 "Point_Index"） */
+    /* Index を読むための BB キー（例 "Point_Index"） */
     UPROPERTY(EditAnywhere, Category = "Blackboard")
     FBlackboardKeySelector PointIndexKey;
 
-    /** NavMesh 投影の検索範囲 */
+    /* NavMesh 投影の検索範囲 */
     UPROPERTY(EditAnywhere, Category = "FindPoint")
     FVector ProjectSearchExtent = FVector(300.f, 300.f, 300.f);
 
-    /** 投影失敗時の再試行回数 */
+    /* 投影失敗時の再試行回数 */
     UPROPERTY(EditAnywhere, Category = "FindPoint")
     int32 RetryCountIfProjectionFails = 1;
 
-    /** 再試行ごとに検索範囲に掛ける倍率 */
+    /* 再試行ごとに検索範囲に掛ける倍率 */
     UPROPERTY(EditAnywhere, Category = "FindPoint", meta = (ClampMin = "1.0"))
     float RetryExtentScale = 2.0f;
 
