@@ -97,7 +97,6 @@ void AMyActor::BuildFromCsv()
     if (!LoadTypeMapCsv(TypeAbs)) return;
 
     BP_OnPreBuild();
-
     for (const FGridCell& Cell : GridCells)
     {
         const FCellTypeInfo* Info = TypeMap.Find(Cell.Code);

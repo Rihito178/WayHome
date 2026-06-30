@@ -286,11 +286,11 @@ struct Z_Construct_UFunction_ARootPoint_PointNum_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "AI|Roaming" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/** \xef\xbf\xbdz\xef\xbf\xbd\xef\xbf\xbdT\xef\xbf\xbd""C\xef\xbf\xbdY\xef\xbf\xbdi\xef\xbf\xbd|\xef\xbf\xbd""C\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj */" },
+		{ "Comment", "//\xef\xbf\xbdz\xef\xbf\xbd\xef\xbf\xbdT\xef\xbf\xbd""C\xef\xbf\xbdY\n" },
 #endif
 		{ "ModuleRelativePath", "RootPoint.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbdz\xef\xbf\xbd\xef\xbf\xbdT\xef\xbf\xbd""C\xef\xbf\xbdY\xef\xbf\xbdi\xef\xbf\xbd|\xef\xbf\xbd""C\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdj" },
+		{ "ToolTip", "\xef\xbf\xbdz\xef\xbf\xbd\xef\xbf\xbdT\xef\xbf\xbd""C\xef\xbf\xbdY" },
 #endif
 	};
 #endif // WITH_METADATA
@@ -346,14 +346,8 @@ struct Z_Construct_UClass_ARootPoint_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \xef\xbf\xbdp\xef\xbf\xbdj\xef\xbf\xbd|\xef\xbf\xbd""C\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xdb\x8e\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""A\xef\xbf\xbdN\xef\xbf\xbd^\xef\xbf\xbd[\xef\xbf\xbdi\xef\xbf\xbdG\xef\xbf\xbd""f\xef\xbf\xbd""B\xef\xbf\xbd^\xef\xbf\xbd\xef\xbf\xbd\xc5\x83M\xef\xbf\xbdY\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xd2\x8fW\xef\xbf\xbd\xc2\x81j\n */" },
-#endif
 		{ "IncludePath", "RootPoint.h" },
 		{ "ModuleRelativePath", "RootPoint.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbdp\xef\xbf\xbdj\xef\xbf\xbd|\xef\xbf\xbd""C\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbdg\xef\xbf\xbd\xef\xbf\xbd\xdb\x8e\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd""A\xef\xbf\xbdN\xef\xbf\xbd^\xef\xbf\xbd[\xef\xbf\xbdi\xef\xbf\xbdG\xef\xbf\xbd""f\xef\xbf\xbd""B\xef\xbf\xbd^\xef\xbf\xbd\xef\xbf\xbd\xc5\x83M\xef\xbf\xbdY\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xd2\x8fW\xef\xbf\xbd\xc2\x81j" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoamingPointsLocal_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -395,7 +389,7 @@ struct Z_Construct_UClass_ARootPoint_Statics
 		{ &Z_Construct_UFunction_ARootPoint_GetRoamingPoint, "GetRoamingPoint" }, // 2313126671
 		{ &Z_Construct_UFunction_ARootPoint_GetRoamingPointLocal, "GetRoamingPointLocal" }, // 383330660
 		{ &Z_Construct_UFunction_ARootPoint_GetRoamingPointWorld, "GetRoamingPointWorld" }, // 3290240024
-		{ &Z_Construct_UFunction_ARootPoint_PointNum, "PointNum" }, // 4031496506
+		{ &Z_Construct_UFunction_ARootPoint_PointNum, "PointNum" }, // 1795969035
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -462,10 +456,10 @@ ARootPoint::~ARootPoint() {}
 struct Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_RootPoint_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARootPoint, ARootPoint::StaticClass, TEXT("ARootPoint"), &Z_Registration_Info_UClass_ARootPoint, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARootPoint), 497643569U) },
+		{ Z_Construct_UClass_ARootPoint, ARootPoint::StaticClass, TEXT("ARootPoint"), &Z_Registration_Info_UClass_ARootPoint, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARootPoint), 474871796U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_RootPoint_h_2169361654(TEXT("/Script/WayHome"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_RootPoint_h_3089672088(TEXT("/Script/WayHome"),
 	Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_RootPoint_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Rihit_Desktop_UE5_5_WayHome_Source_WayHome_RootPoint_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

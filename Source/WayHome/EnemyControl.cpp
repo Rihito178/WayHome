@@ -43,7 +43,7 @@ void AEnemyControl::SetTargetActor(APawn* Target)
 {
     if (BlackboardComp)
     {
-        BlackboardComp->SetValueAsObject(PlayerKeyName, Target); // BB: Player_Info ‚É Set
+        BlackboardComp->SetValueAsObject(PlayerKeyName, Target);//BB:Player_Info‚ÉSet
         StopMovement();
 
         UE_LOG(LogTemp, Warning, TEXT("[BB] Set %s  Key=%s  BB=%s"),
@@ -56,7 +56,7 @@ void AEnemyControl::ClearTargetActor()
 {
     if (BlackboardComp)
     {
-        BlackboardComp->ClearValue(PlayerKeyName);               // BB: Player_Info ‚ð Clear
+        BlackboardComp->ClearValue(PlayerKeyName);//BB:Player_Info‚ðClear
         StopMovement();
 
         UE_LOG(LogTemp, Warning, TEXT("[BB] Clear Key=%s  BB=%s"),

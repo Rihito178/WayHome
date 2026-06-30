@@ -4,9 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "RootPoint.generated.h"
 
-/**
- * 徘徊ポイントを保持するアクター（エディタ上でギズモ編集可）
- */
+
 UCLASS()
 class WAYHOME_API ARootPoint : public AActor
 {
@@ -22,7 +20,7 @@ public:
     virtual void Tick(float DeltaTime) override;
     virtual void OnConstruction(const FTransform& Transform) override;
 
-    /** 配列サイズ（ポイント数） */
+    //配列サイズ
     UFUNCTION(BlueprintPure, Category = "AI|Roaming")
     int32 PointNum() const { return RoamingPointsLocal.Num(); }
 

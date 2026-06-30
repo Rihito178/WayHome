@@ -78,7 +78,7 @@ void AAIEnemy::OnPerceptionUpdated(const TArray<AActor*>& /*UpdatedActors*/)
         }
     }
 
-    // Controller へ通知（BB: Player_Info の Set / Clear）
+    //Controllerへ通知BB:Player_InfoのSet/Clear
     if (AEnemyControl* C = Cast<AEnemyControl>(GetController()))
     {
         if (APawn* P = Cast<APawn>(BestNow))

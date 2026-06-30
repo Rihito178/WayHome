@@ -37,7 +37,7 @@ EBTNodeResult::Type UMyBTTask_RootPoint::ExecuteTask(UBehaviorTreeComponent& Own
     UWorld* World = OwnerComp.GetWorld();
     if (!World) return EBTNodeResult::Failed;
 
-    // RootPoint を1回だけ見つけてキャッシュ
+    //RootPointを1回だけ見つけてキャッシュ
     if (!CachedRootPoint.IsValid())
     {
         CachedRootPoint = FindRootPoint(World);

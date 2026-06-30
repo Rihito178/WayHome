@@ -27,14 +27,14 @@ TArray<FString> UMyCSVInstance::GetDialogue(const FString& FilePath)
         TArray<FString> Lines;
         FileContent.ParseIntoArrayLines(Lines);
 
-        for (int i = 1; i < Lines.Num(); i++) // ヘッダスキップ
+        for (int i = 1; i < Lines.Num(); i++)//ヘッダスキップ
         {
             TArray<FString> Columns;
             Lines[i].ParseIntoArray(Columns, TEXT(","), true);
 
             if (Columns.Num() >= 2 && !Columns[1].IsEmpty())
             {
-                Result.Add(Columns[1]); //セリフ列
+                Result.Add(Columns[1]);//セリフ列
             }
         }
 
